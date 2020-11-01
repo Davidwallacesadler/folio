@@ -1,6 +1,9 @@
 <template>
   <div class="wrapper">
     <div>
+      <ProjectCardList :card-data="projects" />
+      <img src="/comment-author.svg" alt="">
+      <div class="svg"></div>
       <NavBar :options="['About Me', 'Work', 'Not Work']" />
       <div class="d-flex flex-column justify-content-center align-items-center">
         <transition-group name="slide" tag="div" class="d-flex flex-row">
@@ -32,10 +35,10 @@ export default {
       isLeopoldOpen: false,
       isBpOpen: false,
       projects: [
-        "/blue-pail-logo.png",
-        "/good-game-logo.png",
-        "/dice-roll-logo.png",
-        "/shot-buddy-logo.png",
+        {src: "/blue-pail-logo.png", to:"#", alt:"Blue Pail Logo"},
+        {src: "/blue-pail-logo.png", to:"#", alt:"Blue Pail Logo"},
+        {src: "/blue-pail-logo.png", to:"#", alt:"Blue Pail Logo"},
+        {src: "/blue-pail-logo.png", to:"#", alt:"Blue Pail Logo"},
       ],
     };
   },
@@ -57,14 +60,14 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+@import '../assets/styles/main.scss';
+
 .wrapper {
   margin: 0 auto;
   min-height: 100vh;
-  background-color: rgba(255, 255, 255, 0.986);
-}
-img {
-  width: 300px;
+  //background-color: rgba(255, 255, 255, 0.986);
+  // background-color: $folio-bkg-color;
 }
 .hover-card {
   transition: box-shadow 1s;

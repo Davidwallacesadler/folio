@@ -1,0 +1,35 @@
+// ***** Global Variables ******
+// Background Colors
+$folio-background-color: rgb(226, 215, 215);
+$folio-background-overlay: rgba(0, 0, 0, 0.25);
+// Text Colors
+$folio-static-text-color: rgb(50,25,25);
+$folio-active-text-color: rgb(206, 61, 24);
+// Box Shadows
+$folio-card-hover-shadow: 20px 20px 20px rgb(143, 143, 143);
+
+// Values
+$folio-border-radius: 25px;
+
+// Fonts
+
+
+// ***** Global Classes *****
+.background-white {
+    background-color: $folio-background-color;
+}
+.background-overlay {
+    background-color: $folio-background-overlay;
+}
+.text-static {
+    color: $folio-static-text-color;
+}
+.text-active {
+    color: $folio-active-text-color;
+}
+.card-shadow:hover {
+    box-shadow: $folio-card-hover-shadow;
+}
+.rounded-corners {
+    border-radius: $folio-border-radius;
+}
