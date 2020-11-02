@@ -30,6 +30,20 @@ $folio-border-radius: 25px;
 .card-shadow:hover {
     box-shadow: $folio-card-hover-shadow;
 }
+.card-darken:hover {
+    filter: contrast(90%);
+    background-color: rgb(240,240,240);
+}
 .rounded-corners {
     border-radius: $folio-border-radius;
 }
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
+
+  @media (min-width: 768px) { 
+  .grid-2 {
+    grid-template-columns: repeat(2,1fr);
+  }
+  }

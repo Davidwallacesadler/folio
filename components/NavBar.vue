@@ -1,6 +1,6 @@
 <template>
 <!-- TODO: MAke this FLEX!!!! -->
-  <div class="container p-5">
+  <div class="container px-2 py-5">
     <div class="row">
       <div class="col-4">
         <Logo class="icon-lg" />
@@ -91,7 +91,5 @@ a:hover {
   100% {
     border-bottom: 4px solid #2c3e50;
   }
-}
-@media (min-width: 576px) {
 }
 </style>

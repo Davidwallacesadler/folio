@@ -1,29 +1,8 @@
 <template>
   <div class="wrapper">
     <div>
-      <ProjectCardList :card-data="projects" />
-      <img src="/comment-author.svg" alt="">
-      <div class="svg"></div>
       <NavBar :options="['About Me', 'Work', 'Not Work']" />
-      <div class="d-flex flex-column justify-content-center align-items-center">
-        <transition-group name="slide" tag="div" class="d-flex flex-row">
-          <div :key="'logo'" @click="emit()" class="clickable">
-        <LeopoldLogo class="hover-card" />
-          </div>
-        <div :key="'details'"  v-if="checkLeo()" class="details">
-        </div>
-        </transition-group>
-        <transition-group name="slide-reverse" tag="div" class="d-flex flex-row">
-        <div :key="'details'"  v-if="checkBP()" class="details">
-        </div>
-          <div :key="'logo'" @click="clickBP()" class="clickable">
-        <BluePailLogo class="hover-card" />
-          </div>
-        </transition-group>
-        <DiceRollLogo class="hover-card" />
-        <GoodGameLogo class="hover-card" />
-        <WorkoutLogLogo class="hover-card" />
-      </div>
+      <ProjectCardList :card-data="projects" />
     </div>
   </div>
 </template>
@@ -34,11 +13,14 @@ export default {
     return {
       isLeopoldOpen: false,
       isBpOpen: false,
+      personalLogo: {src: "/personal-logo.svg", to:"#", alt: "A D blending into an S inside a circle."},
       projects: [
-        {src: "/blue-pail-logo.png", to:"#", alt:"Blue Pail Logo"},
-        {src: "/blue-pail-logo.png", to:"#", alt:"Blue Pail Logo"},
-        {src: "/blue-pail-logo.png", to:"#", alt:"Blue Pail Logo"},
-        {src: "/blue-pail-logo.png", to:"#", alt:"Blue Pail Logo"},
+        {src: "/blue-pail-logo.svg", to:"#", alt:"A blue watering pail with a yellow sun icon."},
+        {src: "/dice-roll-logo.svg", to:"#", alt:"A regular six-sided dice."},
+        {src: "/good-game-logo.svg", to:"#", alt:"A videogame controller"},
+        {src: "/text-to-clip-logo.svg", to:"#", alt:"A clipboard with a letter T in the middle."},
+        {src: "/workout-log-logo.svg", to:"#", alt:"A clipboard with a letter T in the middle."},
+        
       ],
     };
   },
@@ -129,16 +111,6 @@ export default {
   background-color: rgb(143, 143, 143);
   transition: all 0.75s;
   overflow-y: scroll;
-}
-@media (min-width: 567px) {
-  .hover-card {
-  width: 425px;
-}
-}
-@media (min-width: 768px) { 
-.hover-card {
-  width: 550px;
-}
 }
 
 .slide-enter, .slide-leave-to

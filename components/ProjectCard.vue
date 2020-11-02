@@ -1,7 +1,7 @@
 <template>
-  <div class="rounded-corners card-shadow">
+  <div class="card-darken">
       <a v-if="!!href" :href="href">
-      <img :src="src" :alt="alt">
+      <img :src="src" :alt="alt" class="card-darken">
       </a>
       <nuxt-link v-else :to="to">
       <img :src="src" :alt="alt">
@@ -21,6 +21,8 @@ props: {
 }
 </script>
 
-<style>
-
+<style scoped>
+img {
+    width: 100%;
+}
 </style>

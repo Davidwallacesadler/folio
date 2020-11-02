@@ -1,5 +1,5 @@
 <template>
-<div class="d-flex">
+<div class="grid-2">
     <ProjectCard v-for="(card, i) in cardData" :key="i" :to="card.to" :src="card.src" :alt="card.alt" :href="card.href" />
 </div>
 </template>
