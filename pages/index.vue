@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper">
     <div>
-      <NavBar :options="['About Me', 'Work', 'Not Work']" />
       <ProjectCardList :card-data="projects" />
     </div>
   </div>
@@ -15,11 +14,11 @@ export default {
       isBpOpen: false,
       personalLogo: {src: "/personal-logo.svg", to:"#", alt: "A D blending into an S inside a circle."},
       projects: [
-        {src: "/blue-pail-logo.svg", to:"#", alt:"A blue watering pail with a yellow sun icon."},
+        {src: "/blue-pail-logo.svg", to:"/work/blue-pail", alt:"A blue watering pail with a yellow sun icon.", header: "Blue Pail", subHeader: "iOS 2019"},
         {src: "/dice-roll-logo.svg", to:"#", alt:"A regular six-sided dice."},
         {src: "/good-game-logo.svg", to:"#", alt:"A videogame controller"},
         {src: "/text-to-clip-logo.svg", to:"#", alt:"A clipboard with a letter T in the middle."},
-        {src: "/workout-log-logo.svg", to:"#", alt:"A clipboard with a letter T in the middle."},
+        {src: "/workout-log-logo.svg", to:"#", alt:"A large bicep flexing."},
         
       ],
     };
@@ -45,12 +44,6 @@ export default {
 <style lang="scss">
 @import '../assets/styles/main.scss';
 
-.wrapper {
-  margin: 0 auto;
-  min-height: 100vh;
-  //background-color: rgba(255, 255, 255, 0.986);
-  // background-color: $folio-bkg-color;
-}
 .hover-card {
   transition: box-shadow 1s;
   border: 1px solid transparent;

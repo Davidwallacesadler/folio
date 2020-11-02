@@ -7,8 +7,8 @@
         <nav-header :text="title" class="header" />
       </div>
       <b-nav card-header class="col-8 justify-content-end">
-        <b-nav-item v-for="option in options" :key="option">{{
-          option
+        <b-nav-item v-for="(option,i) in options" :key="i" :to="option.to">{{
+          option.label
         }}</b-nav-item>
         <b-nav-item-dropdown
           v-for="(dropdown, i) in dropdowns"
@@ -37,9 +37,6 @@ export default {
     options: {
       type: Array, //IE ["option", ...""]
       defualt: ["Option 1", "Option 2"],
-    },
-    selectedIndex: {
-      type: Number,
     },
     dropdowns: {
       type: Array, // IE [ {"option": "...", "values": ["DDoption, ...] }, ...{}]
