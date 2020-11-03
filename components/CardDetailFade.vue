@@ -1,5 +1,5 @@
 <template>
-  <div class="gradient position-abolute pinned-bottom">
+  <div class="gradient position-relative pinned-bottom hidden">
       <h3>{{header}}</h3>
       <h5>{{subHeader}}</h5>
   </div>
@@ -22,7 +22,12 @@ props: {
 }
 .pinned-bottom {
     bottom: 0px;
-    left: 0px;
+}
+.hidden {
+    display: none;
+}
+.hidden:hover {
+    display: inline;
 }
 
 </style>

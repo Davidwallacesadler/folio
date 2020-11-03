@@ -1,8 +1,6 @@
 <template>
-  <div class="wrapper">
-    <div>
-      <ProjectCardList :card-data="projects" />
-    </div>
+  <div>
+    <ProjectCardList :card-data="projects" />
   </div>
 </template>
 
@@ -12,7 +10,7 @@ export default {
     return {
       isLeopoldOpen: false,
       isBpOpen: false,
-      personalLogo: {src: "/personal-logo.svg", to:"#", alt: "A D blending into an S inside a circle."},
+      personalLogo: {src: "/personal-logo.svg", to:"/", alt: "A D blending into an S inside a circle."},
       projects: [
         {src: "/blue-pail-logo.svg", to:"/work/blue-pail", alt:"A blue watering pail with a yellow sun icon.", header: "Blue Pail", subHeader: "iOS 2019"},
         {src: "/dice-roll-logo.svg", to:"#", alt:"A regular six-sided dice."},
@@ -91,43 +89,4 @@ export default {
   color: #35495e;
   letter-spacing: 1px;
 }
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: black;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-.details {
-  height: 550px;
-  width: 60vw;
-  background-color: rgb(143, 143, 143);
-  transition: all 0.75s;
-  overflow-y: scroll;
-}
-
-.slide-enter, .slide-leave-to
-/* .slide-leave-active below version 2.1.8 */ {
-  opacity: 0;
-  transform: translateX(120vw);
-}
-.slide-reverse-enter, .slide-reverse-leave-to
-/* .slide-leave-active below version 2.1.8 */ {
-  opacity: 0;
-  transform: translateX(-120vw);
-}
-.slide-leave-active {
-  /* position: absolute; */
-}
-/* @media (min-width: 992px) { 
-.hover-card svg {
-  width: 700px;
-}
-}
-
-@media (min-width: 1200px) { 
-  .hover-card svg {
-  width: 900px;
-}
-} */
 </style>

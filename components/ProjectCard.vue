@@ -28,4 +28,7 @@ props: {
 img {
     width: 100%;
 }
+.card-darken:hover .hidden {
+display: inline;
+}
 </style>
