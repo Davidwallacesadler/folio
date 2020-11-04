@@ -13,10 +13,10 @@ export default {
       personalLogo: {src: "/personal-logo.svg", to:"/", alt: "A D blending into an S inside a circle."},
       projects: [
         {src: "/blue-pail-logo.svg", to:"/work/blue-pail", alt:"A blue watering pail with a yellow sun icon.", header: "Blue Pail", subHeader: "iOS 2019"},
-        {src: "/dice-roll-logo.svg", to:"#", alt:"A regular six-sided dice."},
-        {src: "/good-game-logo.svg", to:"#", alt:"A videogame controller"},
-        {src: "/text-to-clip-logo.svg", to:"#", alt:"A clipboard with a letter T in the middle."},
-        {src: "/workout-log-logo.svg", to:"#", alt:"A large bicep flexing."},
+        {src: "/dice-roll-logo.svg", to:"/work/dice-roll", alt:"A regular six-sided dice."},
+        {src: "/good-game-logo.svg", to:"/work/good-game", alt:"A videogame controller"},
+        {src: "/text-to-clip-logo.svg", to:"/work/text-to-clip", alt:"A clipboard with a letter T in the middle."},
+        {src: "/workout-log-logo.svg", to:"/work/workout-log", alt:"A large bicep flexing."},
         
       ],
     };

@@ -32,6 +32,8 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+  align-content: center;
+  justify-content: center;
 }
 
 // ***** Global Classes *****
@@ -50,6 +52,9 @@ html {
 .card-shadow:hover {
   box-shadow: $folio-card-hover-shadow;
 }
+.card-darken {
+  transition: all 0.5s;
+}
 .card-darken:hover {
   filter: contrast(90%);
   background-color: rgb(240, 240, 240);
@@ -61,9 +66,17 @@ html {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 }
+.sticky {
+  position: sticky;
+}
 
 @media (min-width: 768px) {
   .grid-2 {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1440px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 720px);
   }
 }

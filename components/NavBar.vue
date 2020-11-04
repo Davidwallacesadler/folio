@@ -1,6 +1,6 @@
 <template>
 <!-- TODO: MAke this FLEX!!!! -->
-  <div class="container px-2 py-5">
+  <div class="position-sticky container px-2 py-5">
     <div class="row">
       <div class="col-4">
         <Logo class="icon-lg" />

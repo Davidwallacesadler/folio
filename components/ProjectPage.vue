@@ -1,7 +1,10 @@
 <template>
-<div>
+<div class="container">
   <div class="header">
-      <h2></h2>
+      <nuxt-link to="/">
+      Back
+      </nuxt-link>
+      <h2>{{header}}</h2>
       <slot name="header" />
   </div>
   <div class="body">

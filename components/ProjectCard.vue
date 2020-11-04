@@ -6,7 +6,7 @@
       <nuxt-link v-else :to="to">
       <img :src="src" :alt="alt">
       </nuxt-link>
-      <card-detail-fade :header="header" :sub-header="subHeader" />
+      <!-- <card-detail-fade :header="header" :sub-header="subHeader" /> -->
   </div>
 </template>
 

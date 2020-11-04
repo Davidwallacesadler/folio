@@ -1,5 +1,5 @@
 <template>
-  <project-page header="Blue Pail: Watering Reminders">
+  <project-page header="Dice Roll: 3D dice rolling">
       <template :name="header">
 
       </template>
@@ -14,6 +14,7 @@
 
 <script>
 export default {
+
 }
 </script>
 
