@@ -1,13 +1,11 @@
 <template>
-<!-- TODO: MAke this FLEX!!!! -->
-  <div class="position-sticky container px-2 py-5">
-    <div class="row">
-      <div class="col-4">
+  <div class="navbar d-flex align-items-center justify-content-between px-3 py-4">
+      <div class="d-flex align-items-top justify-content-center">
         <Logo class="icon-lg" />
         <nav-header :text="title" class="header" />
       </div>
-      <b-nav card-header class="col-8 justify-content-end">
-        <b-nav-item v-for="(option,i) in options" :key="i" :to="option.to">{{
+      <b-nav v-if="isScreenLarge" card-header class="justify-content-end">
+        <b-nav-item class="regular-nav-item" v-for="(option,i) in options" :key="i" :to="option.to">{{
           option.label
         }}</b-nav-item>
         <b-nav-item-dropdown
@@ -21,7 +19,16 @@
           }}</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-nav>
-    </div>
+      <b-button class="hamburger-bar" v-else v-b-toggle.navigation-slideout>
+      </b-button>
+      <b-sidebar id="navigation-slideout" backdrop right shadow no-header>
+      <div class="px-3 py-2">
+        <div class="d-flex align-items-center justify-content-start" v-for="option in options" :key="option.label">
+          <div class="icon-placeholder"></div>
+        <router-link class="slideout-nav-link" :to="option.to">{{option.label}}</router-link>
+        </div>
+      </div>
+    </b-sidebar>
   </div>
 </template>
 
@@ -33,7 +40,9 @@ export default {
     NavHeader,
   },
   props: {
-    title: String,
+    title: {
+      type: String,
+    },
     options: {
       type: Array, //IE ["option", ...""]
       defualt: ["Option 1", "Option 2"],
@@ -42,20 +51,51 @@ export default {
       type: Array, // IE [ {"option": "...", "values": ["DDoption, ...] }, ...{}]
     },
   },
+  data() {
+    return {
+      optionStates: Array,
+      windowWidth: 0,
+    };
+  },
+  computed: {
+    isScreenLarge() {
+      return this.windowWidth > 500
+    }
+  },
   methods: {
     optionClicked: function (e) {
       this.$emit("option-changed", e);
     },
+    handleResize() {
+      this.windowWidth = window.innerWidth;
+    }
   },
-  data() {
-    return {
-      optionStates: Array,
-    };
+  created() {
+      window.addEventListener('resize', this.handleResize);
+      this.handleResize();
+  },
+  destroyed() {
+      window.removeEventListener('resize', this.handleResize);
   },
 };
 </script>
 
 <style scoped>
+.regular-nav-item {
+  font-size: 1.1rem;
+  font-weight: 250;
+}
+.icon-placeholder {
+  width: 35px;
+  height: 35px;
+  background-color: black;
+}
+.hamburger-bar {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border: 2px solid black;
+}
 .icon-lg {
   width: 50px;
   height: 50px;
@@ -68,25 +108,11 @@ export default {
   height: 50px;
 }
 .header {
-  align-self: flex-end;
+  width: min-content;
+  margin-left: 0.5rem;
 }
-a {
-  border: none;
-  color: black;
-  border-bottom: 4px solid transparent;
-  transition: border 0.5s;
-  margin-right: 5px;
-}
-a:hover {
-  color: black;
-  border-bottom: 4px solid black;
-}
-@keyframes underline {
-  0% {
-    border-bottom: 1px solid #2c3e50;
-  }
-  100% {
-    border-bottom: 4px solid #2c3e50;
-  }
+.slideout-nav-link {
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 </style>
