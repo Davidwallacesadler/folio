@@ -1,5 +1,5 @@
 <template>
-  <project-page header="Blue Pail: Watering Reminders">
+  <project-page header="Vue Photo Editor">
       <template #header>
         Header
       </template>

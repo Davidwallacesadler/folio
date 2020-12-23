@@ -1,5 +1,5 @@
 <template>
-  <div class="project-card">
+  <div class="p-2" :class="{dark: hasDarkContent}">
       <!-- USE A B-card with text -->
       <a v-if="!!href" :href="href">
       <img :src="src" :alt="alt">
@@ -23,11 +23,16 @@ props: {
     subHeader: String,
     title: String,
     subTitle: String,
+    hasDarkContent: {
+        type: Boolean,
+        default: false,
+    },
 },
 }
 </script>
 
 <style scoped lang="scss">
+@import '@/assets/styles/main.scss';
 img {
     width: 100%;
 }
@@ -40,9 +45,16 @@ img {
     color: transparent !important;
 }
 .card-body:hover {
+    box-shadow: $folio-card-hover-shadow;
 .card-subtitle,
 .card-title {
-    color: gray !important;
+    color: black !important;
+}
+}
+.dark:hover {
+.card-subtitle,
+.card-title {
+    color: white !important;
 }
 }
 </style>

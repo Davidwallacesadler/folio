@@ -1,5 +1,5 @@
 <template>
-  <project-page header="Blue Pail: Watering Reminders">
+  <project-page header="CNSRVIT v2.0 - Leopold">
       <template #header>
         Header
       </template>

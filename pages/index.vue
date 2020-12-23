@@ -1,6 +1,10 @@
 <template>
   <div>
-    <ProjectCardList :card-data="projects" />
+    <ContentAreaHeader text="Work" />
+    <ProjectSectionHeader text="Web Projects" />
+    <ProjectCardList :card-data="webProjects" />
+    <ProjectSectionHeader text="Mobile Projects" />
+    <ProjectCardList :card-data="mobileProjects" />
   </div>
 </template>
 
@@ -11,30 +15,21 @@ export default {
       isLeopoldOpen: false,
       isBpOpen: false,
       personalLogo: {src: "/personal-logo.svg", to:"/", alt: "A D blending into an S inside a circle."},
-      projects: [
-        {src: "/blue-pail-logo.svg", to:"/work/blue-pail", alt:"A blue watering pail with a yellow sun icon.", title: "Blue Pail | iOS", subTitle: "2019"},
-        {src: "/dice-roll-logo.svg", to:"/work/dice-roll", alt:"A regular six-sided dice.", title: "Dice Roll | iOS", subTitle: "2019"},
-        {src: "/good-game-logo.svg", to:"/work/good-game", alt:"A videogame controller", title: "Good Game | iOS", subTitle: "2019"},
-        {src: "/text-to-clip-logo.svg", to:"/work/text-to-clip", alt:"A clipboard with a letter T in the middle.", title: "Text to Clip | iOS", subTitle: "2020"},
-        {src: "/workout-log-logo.svg", to:"/work/workout-log", alt:"A large bicep flexing.", title: "Workout Log | iOS", subTitle: "2018"},
+      mobileProjects: [
+        {src: "/blue-pail-logo.svg", to:"/work/blue-pail", alt:"A blue watering pail with a yellow sun icon.", title: "Blue Pail | iOS, Android", subTitle: "2019", hasDarkContent: false},
+        {src: "/dice-roll-logo.svg", to:"/work/dice-roll", alt:"A regular six-sided dice.", title: "Dice Roll | iOS", subTitle: "2019", hasDarkContent: true},
+        {src: "/good-game-logo.svg", to:"/work/good-game", alt:"A videogame controller", title: "Good Game | iOS", subTitle: "2019", hasDarkContent: false},
+        {src: "/text-to-clip-logo.svg", to:"/work/text-to-clip", alt:"A clipboard with a letter T in the middle.", title: "Text to Clip | iOS", subTitle: "2020", hasDarkContent: true},
+        {src: "/workout-log-logo.svg", to:"/work/workout-log", alt:"A large bicep flexing.", title: "Workout Log | iOS", subTitle: "2018", hasDarkContent: true},
         
+      ],
+      webProjects: [
+        {src: "/leopold.svg", to:"/work/leopold", alt:"A canadian goose", title: "Project Leopold | Vue", subTitle: "2020 - Present", hasDarkContent: false},
+        {src: "/vue-photo-editor.svg", to:"/work/vue-photo-editor", alt:"A simple camera.", title: "VUE Photo Editor | Vue", subTitle: "2019", hasDarkContent: false},
       ],
     };
   },
   methods: {
-    emit() {
-      this.$emit('clicked')
-      this.isLeopoldOpen = !this.isLeopoldOpen
-    },
-    clickBP() {
-      this.isBpOpen = !this.isBpOpen
-    },
-    checkLeo() {
-      return this.isLeopoldOpen
-    },
-    checkBP() {
-      return this.isBpOpen
-    }
   }
 };
 </script>
