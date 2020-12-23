@@ -1,10 +1,14 @@
 <template>
-  <div>
+  <div class="my-5">
+    <div>
+      Profile photo with a little bio and some stuff about what I have done (like resume)
+    </div>
     <ContentAreaHeader text="Work" />
     <ProjectSectionHeader text="Web Projects" />
     <ProjectCardList :card-data="webProjects" />
     <ProjectSectionHeader text="Mobile Projects" />
     <ProjectCardList :card-data="mobileProjects" />
+    <ContentAreaHeader text="Not Work" />
   </div>
 </template>
 
@@ -24,6 +28,10 @@ export default {
         
       ],
       webProjects: [
+        {src: "/leopold.svg", to:"/work/leopold", alt:"A canadian goose", title: "Project Leopold | Vue", subTitle: "2020 - Present", hasDarkContent: false},
+        {src: "/vue-photo-editor.svg", to:"/work/vue-photo-editor", alt:"A simple camera.", title: "VUE Photo Editor | Vue", subTitle: "2019", hasDarkContent: false},
+      ],
+      notWorkProjects: [
         {src: "/leopold.svg", to:"/work/leopold", alt:"A canadian goose", title: "Project Leopold | Vue", subTitle: "2020 - Present", hasDarkContent: false},
         {src: "/vue-photo-editor.svg", to:"/work/vue-photo-editor", alt:"A simple camera.", title: "VUE Photo Editor | Vue", subTitle: "2019", hasDarkContent: false},
       ],

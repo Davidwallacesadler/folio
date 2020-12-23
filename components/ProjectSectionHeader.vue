@@ -18,7 +18,7 @@ props: {
 <style scoped lang="scss">
 @import '@/assets/styles/main.scss';
 .project-section-header {
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: 300;
     border-bottom: $folio-section-border;
 }
