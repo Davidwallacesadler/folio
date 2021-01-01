@@ -1,5 +1,5 @@
 <template>
-<div class="grid-2 p-2">
+<div class="grid-2 p-2 m-2">
     <ProjectCard v-for="(card, i) in cardData"
     :key="i"
     :to="card.to"

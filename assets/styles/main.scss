@@ -7,9 +7,10 @@ $folio-static-text-color: rgb(50, 25, 25);
 $folio-active-text-color: rgb(206, 61, 24);
 // Box Shadows
 $folio-card-hover-shadow: 0 15px 35px 0 rgba(42,51,83,.12),0 5px 15px rgba(0,0,0,.06);
+$folio-card-shadow: 0 10px 25px 0 rgba(42, 51, 83, 0.057),0 5px 15px rgba(0, 0, 0, 0.029);
 
 // Borders
-$folio-section-border: 1px solid rgb(143, 143, 143);
+$folio-section-border: 1px solid black;
 
 // Values
 $folio-border-radius: 25px;
@@ -70,7 +71,7 @@ html {
 }
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 .sticky {
   position: sticky;
@@ -79,16 +80,38 @@ html {
   height: 100vh;
 }
 .folio-content-max-width {
-  flex-basis: 950px;
+  flex-basis: 825px;
+}
+.app-background {
+  background-color: rgb(240,240,240);
+  // background-image: url('~@/static/background.svg');
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-size: 860px 540px;
+}
+.gradient-box {
+  background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%);
+  width: 25px;
+  height: 25px;
+  border-radius: 12px;
+  display: inline-flex;
+}
+.section-header-text {
+  font-weight: 500;
 }
 // Media Queries
 @media (min-width: 768px) {
   .grid-2 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 1000px) {
   .grid-2 {
-    grid-template-columns: repeat(2, 500px);
+    grid-template-columns: repeat(3, 275px);
+  }
+}
+@media (min-width: 860px) {
+  .app-background {
+    background-size: 100%;
   }
 }

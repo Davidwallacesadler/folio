@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-background">
     <NavBar title="David Sadler" 
     :options="[
     {label:'Work', to: '/'},

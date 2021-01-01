@@ -130,6 +130,7 @@ export default {
 }
 .regular-nav-item > a {
   font-size: 1.1rem;
+  border-bottom: 3px solid transparent;
   font-weight: 250;
   color: black;
 }
