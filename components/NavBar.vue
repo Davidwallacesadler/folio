@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="navbar d-flex align-items-center justify-content-between px-3 py-2">
+    class="navbar d-flex align-items-center justify-content-between p-4">
     <div 
       class="d-flex">
       <Logo 
@@ -116,12 +116,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '@/assets/styles/main.scss';
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: white;
+  background-color: $folio-background-color;
+  border-bottom: 1px solid lightgray;
 }
 .navigation-icon {
   width: 30px;
@@ -132,10 +134,11 @@ export default {
   font-size: 1.1rem;
   border-bottom: 3px solid transparent;
   font-weight: 250;
-  color: black;
+  color: $folio-static-text-color;
 }
 .regular-nav-item > a:hover {
-  border-bottom: 3px solid black;
+  color: $folio-theme-color;
+  border-bottom: 3px solid $folio-theme-color;
 }
 .icon-placeholder {
   width: 35px;

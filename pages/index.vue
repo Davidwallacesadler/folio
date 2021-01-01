@@ -1,14 +1,22 @@
 <template>
-  <div class="my-5">
-    <div>
-      Profile photo with a little bio and some stuff about what I have done (like resume)
+  <div class="py-4 d-flex flex-column align-items-center">
+    <div class="p-5">
+      <h1 class="folio-weight-medium">
+        Hi I'm 
+        <span class="text-active folio-font-large folio-weight-thick">David,</span>
+      </h1>
+      <h1 class="folio-font-medium folio-weight-medium">A Driven Designer, Web and Mobile Developer.</h1>
+      <h2 class="folio-weight-medium">And I love to work with:</h2>
     </div>
-    <ContentAreaHeader text="Work" />
+    <div class="px-5 py-3 d-flex border-bottom-theme">
+      <img class="tech-image m-1" v-for="(logo,i) in techLogos" :key="i" :src="logo" :alt="logo">
+    </div> 
+    <!-- <ContentAreaHeader text="Work" />
     <ProjectSectionHeader text="Web Projects" />
     <ProjectCardList :card-data="webProjects" />
     <ProjectSectionHeader text="Mobile Projects" />
     <ProjectCardList :card-data="mobileProjects" />
-    <ContentAreaHeader text="Not Work" />
+    <ContentAreaHeader text="Not Work" /> -->
   </div>
 </template>
 
@@ -16,6 +24,17 @@
 export default {
   data() {
     return {
+      techLogos: ["html5-logo.png",
+                  "css3-logo.png",
+                  "javaScript-logo.png",
+                  "vue-logo.png",
+                  "swift-logo.png",
+                  "kotlin-logo.png",
+                  "xd-logo.png",
+                  "ai-logo.png",
+                  "ps-logo.png",
+                  "blender-logo.png"
+                  ],
       isLeopoldOpen: false,
       isBpOpen: false,
       personalLogo: {src: "/personal-logo.svg", to:"/", alt: "A D blending into an S inside a circle."},
@@ -44,6 +63,11 @@ export default {
 
 <style lang="scss">
 @import '../assets/styles/main.scss';
+
+.tech-image {
+  max-width: 50px;
+  max-height: 50px;
+}
 
 .hover-card {
   transition: box-shadow 1s;

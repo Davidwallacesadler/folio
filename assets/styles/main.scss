@@ -1,10 +1,10 @@
 // ***** Global Variables ******
 // Background Colors
-$folio-background-color: rgb(226, 215, 215);
+$folio-background-color: white;
 $folio-background-overlay: rgba(0, 0, 0, 0.25);
+$folio-theme-color: rgb(6, 228, 154);
 // Text Colors
-$folio-static-text-color: rgb(50, 25, 25);
-$folio-active-text-color: rgb(206, 61, 24);
+$folio-static-text-color: rgb(26, 26, 26);
 // Box Shadows
 $folio-card-hover-shadow: 0 15px 35px 0 rgba(42,51,83,.12),0 5px 15px rgba(0,0,0,.06);
 $folio-card-shadow: 0 10px 25px 0 rgba(42, 51, 83, 0.057),0 5px 15px rgba(0, 0, 0, 0.029);
@@ -51,10 +51,31 @@ html {
   color: $folio-static-text-color;
 }
 .text-link {
-  color: $folio-active-text-color;
+  color: $folio-theme-color;
 }
 .text-active {
-  color: $folio-active-text-color;
+  color: $folio-theme-color;
+}
+h1 {
+  font-weight: 700;
+}
+.folio-font-large {
+  font-size: 3.5rem;
+}
+.folio-font-medium {
+  font-size: 2.5rem;
+}
+.folio-weight-thick {
+  font-weight: 700 !important;
+}
+.folio-weight-medium {
+  font-weight: 400;
+}
+.border-bottom-theme {
+  border-bottom: 5px solid $folio-theme-color;
+}
+.border-left-theme {
+  border-left: 5px solid $folio-theme-color;
 }
 .card-shadow:hover {
   box-shadow: $folio-card-hover-shadow;
@@ -71,7 +92,7 @@ html {
 }
 .grid-2 {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
 .sticky {
   position: sticky;
@@ -83,7 +104,7 @@ html {
   flex-basis: 825px;
 }
 .app-background {
-  background-color: rgb(240,240,240);
+  // background-color: rgb(90, 90, 90);
   // background-image: url('~@/static/background.svg');
   // background-repeat: no-repeat;
   // background-attachment: fixed;
@@ -100,6 +121,11 @@ html {
   font-weight: 500;
 }
 // Media Queries
+@media (min-width: 500px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (min-width: 768px) {
   .grid-2 {
     grid-template-columns: repeat(3, 1fr);

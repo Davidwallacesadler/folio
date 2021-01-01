@@ -1,10 +1,12 @@
 <template>
   <div class="app-background">
-    <NavBar title="David Sadler" 
-    :options="[
-    {label:'Work', to: '/'},
-    {label: 'Not Work', to: '/not-work/index'},
-    { label: 'About Me', to: '/about-me/index'},]"
+    <NavBar 
+      title="David Sadler" 
+      :options="[
+      { label: 'About Me', to: '/about-me/index' },
+      { label: 'Work', to: '/' },
+      { label: 'Not Work', to: '/not-work/index' },
+      ]"
     />
     <Nuxt />
   </div>
