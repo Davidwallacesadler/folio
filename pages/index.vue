@@ -9,14 +9,14 @@
     <div class="p-5 folio-content-max-width d-flex flex-column align-items-center">
       <h1 class="folio-font-medium folio-weight-medium">
         Hi! My name is 
-        <span class="text-active folio-font-large folio-weight-thick">David!</span>
+        <span class="text-theme folio-font-large folio-weight-thick">David!</span>
       </h1> 
       <h2 class="folio-font-medium folio-weight-thin">I design and develop awesome software, and I love what I do
-        <span class="text-active folio-font-large folio-weight-medium fading">|</span>
+        <span class="text-theme folio-font-large folio-weight-medium fading">|</span>
       </h2>
     </div>
 
-    <img class="background-image mr-5 ml-5" src="/computer.svg" alt="A computer and cup icon">
+    <img class="background-image mr-5 ml-5" src="/computer.svg" alt="Icon of a computer with cup and simple shapes">
 
     <div class="bio-container position-relative">
       <div class="bio-background position-absolute">
@@ -25,22 +25,31 @@
           <p class="folio-weight-thin folio-font-small text-white folio-detail-max-width pt-3 text-center">I have been an artist all my life. I love to draw, think, and build. At the end of my college career I found coding and fell in love with the process and with the design aspect. I am currently a web developer.</p>
         </div>
       </div>
-      <b-card-group deck>
-        <b-card>
-          hey
-        </b-card>
-        <b-card>
-          hey
-        </b-card>
-        <b-card>
-          hey
-        </b-card>
-      </b-card-group>
     </div>
-
-    <div class="container pt-2">
-      <b-img class="tech-image m-1" v-for="(logo,i) in techLogos" :key="i" :src="logo.asset" :alt="logo.alt" v-b-tooltip.hover :title="logo.tip" fluid/>
-    </div>
+    <b-card-group class="card-group">
+        <b-card class="folio-card">
+          <div class="d-flex align-items-center justify-content-center flex-column">
+            <img class="folio-card-icon" src="/hand.svg" alt="Icon of a hand with brush, pencil, and ruler.">
+            <h3 class="folio-font-small folio-weight-thick pt-3 text-center">Design</h3>
+            <p class="folio-weight-thin folio-font-small pt-3 text-center">I love to design simple and beautiful interfaces and iconography.</p> 
+            <p class="folio-weight-medium folio-font-small pt-3 text-center text-theme">Design Tools:</p> 
+            <div class="container pt-2 d-flex align-items-center justify-content-center">
+              <b-img class="tech-image m-1" v-for="(logo,i) in designToolLogos" :key="i" :src="logo.asset" :alt="logo.alt" v-b-tooltip.hover :title="logo.tip" fluid />
+            </div>
+          </div>
+        </b-card>
+        <b-card class="folio-card">
+          <div class="d-flex align-items-center justify-content-center flex-column">
+            <img class="folio-card-icon" src="/code.svg" alt="Icon denoting code">
+            <h3 class="folio-font-small folio-weight-thick pt-3 text-center">Development</h3>
+            <p class="folio-weight-thin folio-font-small pt-3 text-center">I am passionate about taking app ideas from conception to completion.</p> 
+            <p class="folio-weight-medium folio-font-small pt-3 text-center text-theme">Dev Tools:</p> 
+            <div class="container pt-2 d-flex align-items-center justify-content-center">
+              <b-img class="tech-image m-1" v-for="(logo,i) in devToolLogos" :key="i" :src="logo.asset" :alt="logo.alt" v-b-tooltip.hover :title="logo.tip" fluid />
+            </div>
+          </div>
+        </b-card>
+    </b-card-group>
   
     <!-- <ContentAreaHeader text="Work" />
     <ProjectSectionHeader text="Web Projects" />
@@ -56,16 +65,17 @@ export default {
   data() {
     return {
       profileImgProps: { width: 250, height: 250, fluid: true, },
-      techLogos: [{ asset:"html5-logo.png", tip: "HTML5", alt: "Html 5 logo"},
+      designToolLogos: [ { asset: "xd-logo.png", tip: "Adobe Xd", alt: "Adobe x.d logo"},
+                         { asset: "ai-logo.png", tip: "Adobe Illustrator", alt: "Adobe Illustrator logo"},
+                         { asset: "ps-logo.png", tip: "Adobe Photoshop", alt: "Adobe Photoshop logo"},
+                         { asset: "blender-logo.png", tip: "Blender", alt: "Blender logo"}
+                       ],
+      devToolLogos: [{ asset:"html5-logo.png", tip: "HTML5", alt: "Html 5 logo"},
                   { asset:"css3-logo.png", tip: "CSS3", alt: "Css 5 logo"},
                   { asset: "javaScript-logo.png", tip: "JavaScript", alt: "java script logo"},
                   { asset: "vue-logo.png", tip: "Vue", alt: "Vue logo"},
                   { asset: "swift-logo.png", tip: "Swift", alt: "Swift logo"},
                   { asset: "kotlin-logo.png", tip: "Kotlin", alt: "Kotlin logo"},
-                  { asset: "xd-logo.png", tip: "Adobe Xd", alt: "Adobe x.d logo"},
-                  { asset: "ai-logo.png", tip: "Adobe Illustrator", alt: "Adobe Illustrator logo"},
-                  { asset: "ps-logo.png", tip: "Adobe Photoshop", alt: "Adobe Photoshop logo"},
-                  { asset: "blender-logo.png", tip: "Blender", alt: "Blender logo"}
                   ],
       isLeopoldOpen: false,
       isBpOpen: false,
@@ -128,7 +138,7 @@ export default {
 }
 .bio-container {
   width: 100vw;
-  height: 275px;
+  height: 400px;
 }
 .bio-background {
   z-index: 1;
@@ -138,6 +148,20 @@ export default {
   height: 400px;
   background-color: $folio-theme-color;
   background-repeat: round;
+}
+.folio-card {
+  z-index: 2;
+  border-radius: $folio-border-radius;
+  box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
+  border: none;
+}
+.folio-card-icon {
+  width: 100px;
+  height: 100px;
+}
+.card-group {
+  margin-top: -1rem;
+  width: 90vw;
 }
 .faux-text-box {
   border: 1px solid gray;
@@ -155,6 +179,11 @@ export default {
   .background-image {
     width: 100vw;
   }
+}
+@media (min-width: 500px) {
+  .card-group {
+  margin-top: -8rem;
+}
 }
 .hover-card {
   transition: box-shadow 1s;
