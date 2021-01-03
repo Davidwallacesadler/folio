@@ -6,14 +6,14 @@
       <b-img class="profile-image" src="david-sadler.png" rounded="circle" v-bind="profileImgProps" />
     </div>
 
-    <div class="p-5 folio-content-max-width">
+    <div class="p-5 folio-content-max-width d-flex flex-column align-items-center">
       <h1 class="folio-font-medium folio-weight-medium">
         Hi! My name is 
         <span class="text-active folio-font-large folio-weight-thick">David!</span>
-      </h1>
-      <div class="border-left-theme pl-5 pr-5">  
-        <h2 class="folio-font-medium folio-weight-thin">I design and develop awesome software, and I love what I do.</h2>
-      </div>
+      </h1> 
+      <h2 class="folio-font-medium folio-weight-thin">I design and develop awesome software, and I love what I do
+        <span class="text-active folio-font-large folio-weight-medium fading">|</span>
+      </h2>
     </div>
 
     <img class="background-image mr-5 ml-5" src="/computer.svg" alt="A computer and cup icon">
@@ -22,9 +22,20 @@
       <div class="bio-background position-absolute">
         <div class="d-flex flex-column align-items-center p-5">
           <h3 class="folio-weight-thick text-white">A Little About Me</h3>
-          <p class="folio-weight-thin text-white">A bunch of things about me. A bunch of things about me. A bunch of things about me</p>
+          <p class="folio-weight-thin folio-font-small text-white folio-detail-max-width pt-3 text-center">I have been an artist all my life. I love to draw, think, and build. At the end of my college career I found coding and fell in love with the process and with the design aspect. I am currently a web developer.</p>
         </div>
       </div>
+      <b-card-group deck>
+        <b-card>
+          hey
+        </b-card>
+        <b-card>
+          hey
+        </b-card>
+        <b-card>
+          hey
+        </b-card>
+      </b-card-group>
     </div>
 
     <div class="container pt-2">
@@ -102,19 +113,35 @@ export default {
   height: 230px;
   background-color: $folio-theme-color;
   background-image: url('~@/static/shapes.svg');
+  background-repeat: round;
 }
-
+.fading {
+  animation: fading 1s infinite;
+}
+@keyframes fading {
+  50% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
 .bio-container {
   width: 100vw;
   height: 275px;
 }
 .bio-background {
   z-index: 1;
-  top: 2px;
+  top: 0px;
   left: 0;
   width: 100vw;
   height: 400px;
   background-color: $folio-theme-color;
+  background-repeat: round;
+}
+.faux-text-box {
+  border: 1px solid gray;
+  border-radius: 10px;
 }
 .background-image {
   max-width: 750px;
