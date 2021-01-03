@@ -2,30 +2,33 @@
   <div class="d-flex flex-column align-items-center">
 
     <div class="profile-header position-relative d-flex align-items-center justify-content-center">
-      <div class="background-rect position-absolute" />
+      <div class="profile-background position-absolute" />
       <b-img class="profile-image" src="david-sadler.png" rounded="circle" v-bind="profileImgProps" />
     </div>
 
     <div class="p-5 folio-content-max-width">
-      <h1 class="folio-weight-medium">
-        Hi I'm 
-        <span class="text-active folio-font-large folio-weight-thick">David</span>
+      <h1 class="folio-font-medium folio-weight-medium">
+        Hi! My name is 
+        <span class="text-active folio-font-large folio-weight-thick">David!</span>
       </h1>
-      <h1 class="folio-font-medium folio-weight-medium">A Driven Designer, Web and Mobile Developer</h1>
-      <h2 class="folio-font-medium folio-weight-medium">I love to work with:</h2>
-      <div class="d-flex row-wrap">
-        <div v-for="(logo,i) in techLogos" :key="i" style="flex-basis:50px;">
-          <b-img class="tech-image m-1" :src="logo.asset" :alt="logo.alt" v-b-tooltip.hover :title="logo.tip" />
+      <div class="border-left-theme pl-5 pr-5">  
+        <h2 class="folio-font-medium folio-weight-thin">I design and develop awesome software, and I love what I do.</h2>
+      </div>
+    </div>
+
+    <img class="background-image mr-5 ml-5" src="/computer.svg" alt="A computer and cup icon">
+
+    <div class="bio-container position-relative">
+      <div class="bio-background position-absolute">
+        <div class="d-flex flex-column align-items-center p-5">
+          <h3 class="folio-weight-thick text-white">A Little About Me</h3>
+          <p class="folio-weight-thin text-white">A bunch of things about me. A bunch of things about me. A bunch of things about me</p>
         </div>
       </div>
     </div>
 
-      
-    
-    <div>
-      <div class="texture-background">
-        
-      </div>
+    <div class="container pt-2">
+      <b-img class="tech-image m-1" v-for="(logo,i) in techLogos" :key="i" :src="logo.asset" :alt="logo.alt" v-b-tooltip.hover :title="logo.tip" fluid/>
     </div>
   
     <!-- <ContentAreaHeader text="Work" />
@@ -86,25 +89,46 @@ export default {
 }
 .profile-header {
   width: 100vw;
-  height: 260px;
+  height: 300px;
 }
 .profile-image {
   z-index: 2;
 }
-.background-rect {
+.profile-background {
   z-index: 1;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 200px;
+  height: 230px;
   background-color: $folio-theme-color;
+  background-image: url('~@/static/shapes.svg');
+}
+
+.bio-container {
+  width: 100vw;
+  height: 275px;
+}
+.bio-background {
+  z-index: 1;
+  top: 2px;
+  left: 0;
+  width: 100vw;
+  height: 400px;
+  background-color: $folio-theme-color;
+}
+.background-image {
+  max-width: 750px;
 }
 .tech-image {
   max-width: 50px;
   max-height: 50px;
   transition: all 0.25s;
 }
-
+@media (min-width: 1200px) {
+  .background-image {
+    width: 100vw;
+  }
+}
 .hover-card {
   transition: box-shadow 1s;
   border: 1px solid transparent;
