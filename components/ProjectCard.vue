@@ -44,7 +44,7 @@ props: {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.75s;
+    transition: opacity 0.6s;
     background-color: rgb(37, 25, 116);
     opacity: 0;
     height: 100%;

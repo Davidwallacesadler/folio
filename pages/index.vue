@@ -44,8 +44,10 @@
             <h3 class="folio-font-small folio-weight-thick pt-3 text-center">Development</h3>
             <p class="folio-weight-thin folio-font-small pt-3 text-center">I am passionate about taking app ideas from conception to completion.</p> 
             <p class="folio-weight-medium folio-font-small pt-3 text-center text-theme">Dev Tools:</p> 
-            <div class="container pt-2 d-flex align-items-center justify-content-center">
-              <b-img class="tech-image m-1" v-for="(logo,i) in devToolLogos" :key="i" :src="logo.asset" :alt="logo.alt" v-b-tooltip.hover :title="logo.tip" fluid />
+            <div class="d-flex justify-content-center">
+              <div class="container pt-2">
+                <b-img class="tech-image m-1" v-for="(logo,i) in devToolLogos" :key="i" :src="logo.asset" :alt="logo.alt" v-b-tooltip.hover :title="logo.tip" fluid />
+              </div>
             </div>
           </div>
         </b-card>
@@ -53,7 +55,7 @@
     
     <div class="d-flex flex-column align-items-center justify-content-center">
       <h3 class="folio-weight-thick pt-5">My Work</h3>
-      <p class="folio-weight-thin folio-font-small">Below is a collection of my recent design and development work</p>
+      <p class="folio-weight-thin folio-font-small text-center">Below is a collection of my recent design and development work</p>
     </div>
     <b-button pill class="folio-button">
       <img class="folio-button-icon" src="/contact.svg" alt="Icon of a person waving.">
