@@ -1,5 +1,5 @@
 <template>
-<div class="grid-2 p-2 m-2">
+<b-card-group class="grid-2 p-5">
     <ProjectCard v-for="(card, i) in cardData"
     :key="i"
     :to="card.to"
@@ -9,7 +9,7 @@
     :title="card.title"
     :sub-title="card.subTitle"
     :has-dark-content="card.hasDarkContent" />
-</div>
+</b-card-group>
 </template>
 
 <script>
@@ -23,6 +23,19 @@ props: {
 
 <style scoped>
 .card-list {
-
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 300px;
+}
+@media (min-width: 768px) {
+  .card-list {
+      width: 90vw;
+      
+  }
+}
+@media (min-width: 1440px) {
+  .card-list {
+      width: 1200px;
+  }
 }
 </style>

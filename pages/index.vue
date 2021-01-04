@@ -1,6 +1,5 @@
 <template>
   <div class="d-flex flex-column align-items-center">
-
     <div class="profile-header position-relative d-flex align-items-center justify-content-center">
       <div class="profile-background position-absolute" />
       <b-img class="profile-image" src="david-sadler.png" rounded="circle" v-bind="profileImgProps" />
@@ -26,7 +25,8 @@
         </div>
       </div>
     </div>
-    <b-card-group class="card-group">
+    
+    <b-card-group class="card-group skills-group">
         <b-card class="folio-card">
           <div class="d-flex align-items-center justify-content-center flex-column">
             <img class="folio-card-icon" src="/hand.svg" alt="Icon of a hand with brush, pencil, and ruler.">
@@ -50,7 +50,19 @@
           </div>
         </b-card>
     </b-card-group>
-  
+    
+    <div class="d-flex flex-column align-items-center justify-content-center">
+      <h3 class="folio-weight-thick pt-5">My Work</h3>
+      <p class="folio-weight-thin folio-font-small">Below is a collection of my recent design and development work</p>
+    </div>
+    <b-button pill class="folio-button">
+      <img class="folio-button-icon" src="/contact.svg" alt="Icon of a person waving.">
+      Contact Me
+      </b-button>
+
+    <div class="p-5">
+      <ProjectCardList :card-data="workProjects" />
+    </div>
     <!-- <ContentAreaHeader text="Work" />
     <ProjectSectionHeader text="Web Projects" />
     <ProjectCardList :card-data="webProjects" />
@@ -58,6 +70,7 @@
     <ProjectCardList :card-data="mobileProjects" />
     <ContentAreaHeader text="Not Work" /> -->
   </div>
+
 </template>
 
 <script>
@@ -80,17 +93,17 @@ export default {
       isLeopoldOpen: false,
       isBpOpen: false,
       personalLogo: {src: "/personal-logo.svg", to:"/", alt: "A D blending into an S inside a circle."},
-      mobileProjects: [
-        {src: "/blue-pail-logo.svg", to:"/work/blue-pail", alt:"A blue watering pail with a yellow sun icon.", title: "Blue Pail | iOS, Android", subTitle: "2019", hasDarkContent: false},
-        {src: "/dice-roll-logo.svg", to:"/work/dice-roll", alt:"A regular six-sided dice.", title: "Dice Roll | iOS", subTitle: "2019", hasDarkContent: true},
-        {src: "/good-game-logo.svg", to:"/work/good-game", alt:"A videogame controller", title: "Good Game | iOS", subTitle: "2019", hasDarkContent: false},
-        {src: "/text-to-clip-logo.svg", to:"/work/text-to-clip", alt:"A clipboard with a letter T in the middle.", title: "Text to Clip | iOS", subTitle: "2020", hasDarkContent: true},
-        {src: "/workout-log-logo.svg", to:"/work/workout-log", alt:"A large bicep flexing.", title: "Workout Log | iOS", subTitle: "2018", hasDarkContent: true},
-        
+      workProjects: [
+        {src: "/leopold.svg", href:"/work/leopold", alt:"A canadian goose", title: "Project Leopold | Vue", subTitle: "2020 - Present", hasDarkContent: false},
+        {src: "/vue-photo-editor.svg", href:"/work/vue-photo-editor", alt:"A simple camera.", title: "VUE Photo Editor | Vue", subTitle: "2019", hasDarkContent: false},
+        {src: "/blue-pail-logo.svg", href:"/work/blue-pail", alt:"A blue watering pail with a yellow sun icon.", title: "Blue Pail | iOS, Android", subTitle: "2019", hasDarkContent: false},
+        {src: "/dice-roll-logo.svg", href:"/work/dice-roll", alt:"A regular six-sided dice.", title: "Dice Roll | iOS", subTitle: "2019", hasDarkContent: true},
+        {src: "/good-game-logo.svg", href:"/work/good-game", alt:"A videogame controller", title: "Good Game | iOS", subTitle: "2019", hasDarkContent: false},
+        {src: "/text-to-clip-logo.svg", href:"/work/text-to-clip", alt:"A clipboard with a letter T in the middle.", title: "Text to Clip | iOS", subTitle: "2020", hasDarkContent: true},
+        {src: "/workout-log-logo.svg", href:"/work/workout-log", alt:"A large bicep flexing.", title: "Workout Log | iOS", subTitle: "2018", hasDarkContent: true},
       ],
       webProjects: [
-        {src: "/leopold.svg", to:"/work/leopold", alt:"A canadian goose", title: "Project Leopold | Vue", subTitle: "2020 - Present", hasDarkContent: false},
-        {src: "/vue-photo-editor.svg", to:"/work/vue-photo-editor", alt:"A simple camera.", title: "VUE Photo Editor | Vue", subTitle: "2019", hasDarkContent: false},
+        
       ],
       notWorkProjects: [
         {src: "/leopold.svg", to:"/work/leopold", alt:"A canadian goose", title: "Project Leopold | Vue", subTitle: "2020 - Present", hasDarkContent: false},
@@ -116,6 +129,7 @@ export default {
   z-index: 2;
 }
 .profile-background {
+  display: grid;
   z-index: 1;
   top: 0;
   left: 0;
@@ -142,12 +156,12 @@ export default {
 }
 .bio-background {
   z-index: 1;
-  top: 0px;
+  top: 1rem;
   left: 0;
   width: 100vw;
   height: 400px;
   background-color: $folio-theme-color;
-  background-repeat: round;
+  background-image: url('~@/static/sprinkles.svg');
 }
 .folio-card {
   z-index: 2;
@@ -159,8 +173,8 @@ export default {
   width: 100px;
   height: 100px;
 }
-.card-group {
-  margin-top: -1rem;
+.card-group.skills-group {
+  margin-top: -5rem;
   width: 90vw;
 }
 .faux-text-box {
@@ -180,10 +194,10 @@ export default {
     width: 100vw;
   }
 }
-@media (min-width: 500px) {
-  .card-group {
+@media (min-width: 600px) {
+  .card-group.skills-group {
   margin-top: -8rem;
-}
+  }
 }
 .hover-card {
   transition: box-shadow 1s;
