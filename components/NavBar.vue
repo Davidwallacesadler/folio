@@ -6,10 +6,13 @@
       <Logo 
         class="icon-lg" />
     </div>
-    <b-nav 
+    <div>
+      <slot />
+    </div>
+    <!-- <b-nav 
     v-if="isScreenLarge" 
     card-header
-    class="justify-content-end">
+    class="justify-content-end">  
       <b-nav-item 
       class="regular-nav-item" 
       v-for="(option,i) in options"
@@ -57,7 +60,7 @@
         {{option.label}}
         </router-link>
       </div>
-    </b-sidebar>
+    </b-sidebar> -->
   </div>
 </template>
 
@@ -74,7 +77,6 @@ export default {
     },
     options: {
       type: Array, //IE ["option", ...""]
-      defualt: ["Option 1", "Option 2"],
     },
     dropdowns: {
       type: Array, // IE [ {"option": "...", "values": ["DDoption, ...] }, ...{}]
@@ -86,33 +88,33 @@ export default {
       windowWidth: 0,
     };
   },
-  computed: {
-    isScreenLarge() {
-      return this.windowWidth > 500
-    },
-    navigationIcons() {
-      return [
-        `/work.svg`,
-        `/work.svg`,
-        `/about-me.svg`
-      ]
-    }
-  },
-  methods: {
-    optionClicked: function (e) {
-      this.$emit("option-changed", e);
-    },
-    handleResize() {
-      this.windowWidth = window.innerWidth;
-    }
-  },
-  created() {
-      window.addEventListener('resize', this.handleResize);
-      this.handleResize();
-  },
-  destroyed() {
-      window.removeEventListener('resize', this.handleResize);
-  },
+  // computed: {
+  //   // isScreenLarge() {
+  //   //    return this.windowWidth > 500
+  //   // },
+  //   navigationIcons() {
+  //     return [
+  //       `/work.svg`,
+  //       `/work.svg`,
+  //       `/about-me.svg`
+  //     ]
+  //   }
+  // },
+  // methods: {
+  //   optionClicked: function (e) {
+  //     this.$emit("option-changed", e);
+  //   },
+  //   handleResize() {
+  //     this.windowWidth = window.innerWidth;
+  //   }
+  // },
+  // created() {
+  //     window.addEventListener('resize', this.handleResize);
+  //     this.handleResize();
+  // },
+  // destroyed() {
+  //     window.removeEventListener('resize', this.handleResize);
+  // },
 };
 </script>
 
