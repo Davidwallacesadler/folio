@@ -26,12 +26,12 @@
       </div>
     </div>
     
-    <b-card-group class="card-group skills-group">
+    <b-card-group class="card-group skills-group folio-content-max-width">
         <b-card class="folio-card">
           <div class="d-flex align-items-center justify-content-center flex-column">
             <img class="folio-card-icon" src="/hand.svg" alt="Icon of a hand with brush, pencil, and ruler.">
             <h3 class="folio-font-small folio-weight-thick pt-3 text-center">Design</h3>
-            <p class="folio-weight-thin folio-font-small pt-3 text-center">I love to design simple and beautiful interfaces and iconography.</p> 
+            <p class="folio-weight-thin folio-font-small pt-3 text-center">I love to design simple, beautiful interfaces and iconography.</p> 
             <p class="folio-weight-medium folio-font-small pt-3 text-center text-theme">Design Tools:</p> 
             <div class="container pt-2 d-flex align-items-center justify-content-center">
               <b-img class="tech-image m-1" v-for="(logo,i) in designToolLogos" :key="i" :src="logo.asset" :alt="logo.alt" v-b-tooltip.hover :title="logo.tip" fluid />
@@ -65,13 +65,9 @@
     <div class="p-5">
       <ProjectCardList :card-data="workProjects" />
     </div>
-    <!-- <ContentAreaHeader text="Work" />
-    <ProjectSectionHeader text="Web Projects" />
-    <ProjectCardList :card-data="webProjects" />
-    <ProjectSectionHeader text="Mobile Projects" />
-    <ProjectCardList :card-data="mobileProjects" />
-    <ContentAreaHeader text="Not Work" /> -->
+
   </div>
+
 
 </template>
 
@@ -80,41 +76,116 @@ export default {
   data() {
     return {
       profileImgProps: { width: 250, height: 250, fluid: true, },
-      designToolLogos: [ { asset: "xd-logo.png", tip: "Adobe Xd", alt: "Adobe x.d logo"},
-                         { asset: "ai-logo.png", tip: "Adobe Illustrator", alt: "Adobe Illustrator logo"},
-                         { asset: "ps-logo.png", tip: "Adobe Photoshop", alt: "Adobe Photoshop logo"},
-                         { asset: "blender-logo.png", tip: "Blender", alt: "Blender logo"}
-                       ],
-      devToolLogos: [{ asset:"html5-logo.png", tip: "HTML5", alt: "Html 5 logo"},
-                  { asset:"css3-logo.png", tip: "CSS3", alt: "Css 5 logo"},
-                  { asset: "javaScript-logo.png", tip: "JavaScript", alt: "java script logo"},
-                  { asset: "vue-logo.png", tip: "Vue", alt: "Vue logo"},
-                  { asset: "swift-logo.png", tip: "Swift", alt: "Swift logo"},
-                  { asset: "kotlin-logo.png", tip: "Kotlin", alt: "Kotlin logo"},
-                  ],
-      isLeopoldOpen: false,
-      isBpOpen: false,
-      personalLogo: {src: "/personal-logo.svg", to:"/", alt: "A D blending into an S inside a circle."},
-      workProjects: [
-        {src: "/leopold.svg", href:"/work/leopold", alt:"A canadian goose", title: "Project Leopold | Vue", subTitle: "2020 - Present", hasDarkContent: false},
-        {src: "/vue-photo-editor.svg", href:"/work/vue-photo-editor", alt:"A simple camera.", title: "VUE Photo Editor | Vue", subTitle: "2019", hasDarkContent: false},
-        {src: "/blue-pail-logo.svg", href:"/work/blue-pail", alt:"A blue watering pail with a yellow sun icon.", title: "Blue Pail | iOS, Android", subTitle: "2019", hasDarkContent: false},
-        {src: "/dice-roll-logo.svg", href:"/work/dice-roll", alt:"A regular six-sided dice.", title: "Dice Roll | iOS", subTitle: "2019", hasDarkContent: true},
-        {src: "/good-game-logo.svg", href:"/work/good-game", alt:"A videogame controller", title: "Good Game | iOS", subTitle: "2019", hasDarkContent: false},
-        {src: "/text-to-clip-logo.svg", href:"/work/text-to-clip", alt:"A clipboard with a letter T in the middle.", title: "Text to Clip | iOS", subTitle: "2020", hasDarkContent: true},
-        {src: "/workout-log-logo.svg", href:"/work/workout-log", alt:"A large bicep flexing.", title: "Workout Log | iOS", subTitle: "2018", hasDarkContent: true},
+      designToolLogos:
+      [
+        { 
+          asset: "xd-logo.png",
+          tip: "Adobe Xd",
+          alt: "Adobe x.d logo"
+        },
+        {
+          asset: "ai-logo.png",
+          tip: "Adobe Illustrator",
+          alt: "Adobe Illustrator logo"
+        },
+        { 
+          asset: "ps-logo.png",
+          tip: "Adobe Photoshop",
+          alt: "Adobe Photoshop logo"
+        },
+        {
+          asset: "blender-logo.png",
+          tip: "Blender",
+          alt: "Blender logo"
+        }
       ],
-      webProjects: [
-        
+      devToolLogos: 
+      [
+        { 
+          asset:"html5-logo.png",
+          tip: "HTML5",
+          alt: "Html 5 logo"
+        },
+        {
+          asset:"css3-logo.png",
+          tip: "CSS3",
+          alt: "Css 5 logo"
+        },
+        {
+          asset: "javaScript-logo.png",
+          tip: "JavaScript",
+          alt: "java script logo"
+        },
+        {
+          asset: "vue-logo.png",
+          tip: "Vue",
+          alt: "Vue logo"
+        },
+        {
+          asset: "swift-logo.png",
+          tip: "Swift",
+          alt: "Swift logo"
+        },
+        {
+          asset:"kotlin-logo.png",
+          tip: "Kotlin",
+          alt: "Kotlin logo"
+        },
       ],
-      notWorkProjects: [
-        {src: "/leopold.svg", to:"/work/leopold", alt:"A canadian goose", title: "Project Leopold | Vue", subTitle: "2020 - Present", hasDarkContent: false},
-        {src: "/vue-photo-editor.svg", to:"/work/vue-photo-editor", alt:"A simple camera.", title: "VUE Photo Editor | Vue", subTitle: "2019", hasDarkContent: false},
+      workProjects: 
+      [
+        {
+          src: "/leopold.svg",
+          link: [{ title: `View Site`, href:"https://cnsrvit.usaconservation.org/" }],
+          alt:"A canadian goose",
+          title: "Project Leopold | Vue",
+          subTitle: "Staffing application currently used by American Conservation Experience."
+        },
+        {
+          src: "/vue-photo-editor.svg",
+          link: [{ title: `In Progress`, href:"" }],
+          alt:"A simple camera.",
+          title: "VUE Photo Editor | Vue",
+          subTitle: "Photo editor made using vue and vueCropper."
+        },
+        {
+          src: "/blue-pail-logo.svg",
+          link: [{ title: `View Code`, href:"https://github.com/Davidwallacesadler/Blue-Pail" }],
+          alt:"A blue watering pail with a yellow sun icon.",
+          title: "Blue Pail | iOS, Android",
+          subTitle: "Plant wantering reminder and tracking app."
+        },
+        {
+          src: "/dice-roll-logo.svg",
+          link: [{ title: `View Code`, href:"https://github.com/Davidwallacesadler/diceSim" }],
+          alt:"A regular six-sided dice.",
+          title: "Dice Roll | iOS",
+          subTitle: "3D dice rolling simulator utilizing SceneKit."
+        },
+        {
+          src: "/good-game-logo.svg",
+          link: [{ title: `View Code`, href:"https://github.com/Davidwallacesadler/GG-GoodGame" }],
+          alt:"A videogame controller",
+          title: "Good Game | iOS",
+          subTitle: "Videogame library manager and playthrough recording app."
+        },
+        {
+          src: "/text-to-clip-logo.svg",
+          link: [{ title: `View App`, href:"https://apps.apple.com/us/app/texttoclip/id1525970670" }],
+          alt:"A clipboard with a letter T in the middle.",
+          title: "Text to Clip | iOS",
+          subTitle: "Text scanning app."
+        },
+        {
+          src: "/workout-log-logo.svg",
+          link: [{ title: `View App`, href:"https://apps.apple.com/us/app/the-workout-log/id1254050586" }],
+          alt:"A large bicep flexing.",
+          title: "Workout Log | iOS",
+          subTitle: "Workout tracker and fitness app."
+        },
       ],
     };
   },
-  methods: {
-  }
 };
 </script>
 
@@ -214,6 +285,7 @@ export default {
 
 .hidden {
   background-color: rgba(0, 0, 0, 0.25);
+  background-image: url('~@/static/sprinkles.svg');
   opacity: 0;
   transition: opacity 1s;
   position: absolute;

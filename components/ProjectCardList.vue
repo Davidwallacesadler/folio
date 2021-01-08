@@ -5,7 +5,7 @@
     :to="card.to"
     :src="card.src" 
     :alt="card.alt" 
-    :href="card.href"
+    :links="card.link"
     :title="card.title"
     :sub-title="card.subTitle"
     :has-dark-content="card.hasDarkContent" />
