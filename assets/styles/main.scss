@@ -80,6 +80,10 @@ h1 {
 .folio-weight-thin {
   font-weight: 200;
 }
+.folio-icon-md {
+  height: 50px;
+  width: 50px;
+}
 .border-bottom-theme {
   border-bottom: 5px solid $folio-theme-color;
 }
@@ -125,6 +129,9 @@ h1 {
     height: 0px;
     margin-right: 0px;
   }
+}
+.folio-button:active,.folio-button:focus {
+  background-color: $folio-theme-color !important;
 }
 .folio-button-icon {
   height: 1.2rem;

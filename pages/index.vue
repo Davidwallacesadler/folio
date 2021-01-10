@@ -57,7 +57,7 @@
       <h3 class="folio-weight-thick pt-5">My Work</h3>
       <p class="folio-weight-thin folio-font-small text-center">Below is a collection of my recent design and development work</p>
     </div>
-    <b-button pill class="folio-button">
+    <b-button href="mailto:davidwallacesadler@gmail.com" pill class="folio-button">
       <img class="folio-button-icon" src="/contact.svg" alt="Icon of a person waving.">
       Contact Me
       </b-button>
@@ -66,8 +66,16 @@
       <ProjectCardList :card-data="workProjects" />
     </div>
 
-  </div>
+    <div class="pt-5 folio-footer d-flex flex-column justify-content-center text-center">
+      <p class="folio-font-small folio-weight-thin text-white">Find me building and creating each and every day!</p>
+      <div class="d-flex">
+        <a v-for="(social, i) in socials" :key="'social-link' + i" :href="social.href">
+          <img class="folio-icon-md" :src="social.src" alt="Social Logo">
+        </a>
+      </div>
+    </div>
 
+  </div>
 
 </template>
 
@@ -136,7 +144,7 @@ export default {
       [
         {
           src: "/leopold.svg",
-          link: [{ title: `View Site`, href:"https://cnsrvit.usaconservation.org/" }],
+          link: [{ title: `View Site >`, href:"https://cnsrvit.usaconservation.org/" }],
           alt:"A canadian goose",
           title: "Project Leopold | Vue",
           subTitle: "Staffing application currently used by American Conservation Experience."
@@ -150,43 +158,54 @@ export default {
         },
         {
           src: "/blue-pail-logo.svg",
-          link: [{ title: `View Code`, href:"https://github.com/Davidwallacesadler/Blue-Pail" }],
+          link: [{ title: `View Code >`, href:"https://github.com/Davidwallacesadler/Blue-Pail" }],
           alt:"A blue watering pail with a yellow sun icon.",
           title: "Blue Pail | iOS, Android",
           subTitle: "Plant wantering reminder and tracking app."
         },
         {
           src: "/dice-roll-logo.svg",
-          link: [{ title: `View Code`, href:"https://github.com/Davidwallacesadler/diceSim" }],
+          link: [{ title: `View Code >`, href:"https://github.com/Davidwallacesadler/diceSim" }],
           alt:"A regular six-sided dice.",
           title: "Dice Roll | iOS",
           subTitle: "3D dice rolling simulator utilizing SceneKit."
         },
         {
           src: "/good-game-logo.svg",
-          link: [{ title: `View Code`, href:"https://github.com/Davidwallacesadler/GG-GoodGame" }],
+          link: [{ title: `View Code >`, href:"https://github.com/Davidwallacesadler/GG-GoodGame" }],
           alt:"A videogame controller",
           title: "Good Game | iOS",
           subTitle: "Videogame library manager and playthrough recording app."
         },
         {
           src: "/text-to-clip-logo.svg",
-          link: [{ title: `View App`, href:"https://apps.apple.com/us/app/texttoclip/id1525970670" }],
+          link: [{ title: `View App >`, href:"https://apps.apple.com/us/app/texttoclip/id1525970670" }],
           alt:"A clipboard with a letter T in the middle.",
           title: "Text to Clip | iOS",
-          subTitle: "Text scanning app."
+          subTitle: "Text scanning and digitizing app."
         },
         {
           src: "/workout-log-logo.svg",
-          link: [{ title: `View App`, href:"https://apps.apple.com/us/app/the-workout-log/id1254050586" }],
+          link: [{ title: `View App >`, href:"https://apps.apple.com/us/app/the-workout-log/id1254050586" }],
           alt:"A large bicep flexing.",
           title: "Workout Log | iOS",
           subTitle: "Workout tracker and fitness app."
         },
       ],
-    };
-  },
-};
+    socials:
+      [
+        {
+          src: "/linkedin-logo.png",
+          href: "https://www.linkedin.com/in/david-wallace-sadler/",
+        },
+        {
+          src: "/github-logo.svg",
+          href: "https://github.com/Davidwallacesadler",
+        },
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -319,5 +338,15 @@ export default {
   font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
+}
+.footer-graphic {
+  width: 100vw;
+}
+.folio-footer {
+  width: 100vw;
+  height: 300px;
+  background-color: $folio-theme-color;
+  background-image: url('~@/static/shapes.svg');
+  background-repeat: round;
 }
 </style>
