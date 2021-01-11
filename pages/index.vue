@@ -5,12 +5,12 @@
       <b-img class="profile-image" src="david-sadler.png" rounded="circle" v-bind="profileImgProps" />
     </div>
 
-    <div class="p-5 folio-content-max-width d-flex flex-column align-items-center">
-      <h1 class="folio-font-medium folio-weight-medium">
+    <div class="py-5 folio-content-max-width d-flex flex-column align-items-center">
+      <h1 class="folio-font-medium folio-weight-medium text-center">
         Hi! My name is 
         <span class="text-theme folio-font-large folio-weight-thick">David!</span>
       </h1> 
-      <h2 class="folio-font-medium folio-weight-thin">I design and develop awesome software, and I love what I do
+      <h2 class="folio-font-medium folio-weight-thin text-center">I design and develop awesome software, and I love what I do
         <span class="text-theme folio-font-large folio-weight-medium fading">|</span>
       </h2>
     </div>
@@ -21,7 +21,7 @@
       <div class="bio-background position-absolute">
         <div class="d-flex flex-column align-items-center p-5">
           <h3 class="folio-weight-thick text-white">A Little About Me</h3>
-          <p class="folio-weight-thin folio-font-small text-white folio-detail-max-width pt-3 text-center">I have been an artist all my life. I love to draw, think, and build. At the end of my college career I found coding and fell in love with the process and with the design aspect. I am currently a web developer.</p>
+          <p class="folio-weight-thin folio-font-small text-white folio-detail-max-width pt-3 text-center">I have been an artist all my life. I love to draw, think, and build and I love to build and design apps.</p>
         </div>
       </div>
     </div>
@@ -61,20 +61,12 @@
       <img class="folio-button-icon" src="/contact.svg" alt="Icon of a person waving.">
       Contact Me
       </b-button>
-
-    <div class="p-5">
+    <div class="py-5">
       <ProjectCardList :card-data="workProjects" />
     </div>
-
-    <div class="pt-5 folio-footer d-flex flex-column justify-content-center text-center">
-      <p class="folio-font-small folio-weight-thin text-white">Find me building and creating each and every day!</p>
-      <div class="d-flex">
-        <a v-for="(social, i) in socials" :key="'social-link' + i" :href="social.href">
-          <img class="folio-icon-md" :src="social.src" alt="Social Logo">
-        </a>
-      </div>
-    </div>
-
+    <!-- <div class="folio-footer d-flex align-items-center justify-content-center text-center">
+      <p class="folio-font-small text-white">Made with ♡ by Me 2021</p>
+    </div> -->
   </div>
 
 </template>
@@ -339,12 +331,9 @@ export default {
   color: #35495e;
   letter-spacing: 1px;
 }
-.footer-graphic {
-  width: 100vw;
-}
 .folio-footer {
   width: 100vw;
-  height: 300px;
+  height: 100px;
   background-color: $folio-theme-color;
   background-image: url('~@/static/shapes.svg');
   background-repeat: round;
