@@ -5,7 +5,7 @@
       <div class="hover-contents">
           <h5 class="text-white text-center">{{ title }}</h5>
           <p class="text-white mb-2 text-center">{{ subTitle }}</p>
-          <b-button v-for="item in links" :key="item.title" :href="item.href" pill class="folio-button">
+          <b-button v-for="item in links" :key="item.title" :href="item.href" target="_blank" pill class="folio-button">
               {{item.title}}
           </b-button>
       </div>

@@ -120,15 +120,20 @@ h1 {
   padding: 1rem 1.5rem;
   font-size: 1.2rem;
   font-weight: 450;
+  .folio-button-icon {
+    height: 0px;
+    margin-right: 0px;
+  }
 }
 .folio-button:hover {
   background-color: $folio-theme-color;
   border: 2px solid $folio-theme-color;
   color: white;
   .folio-button-icon {
-    height: 0px;
-    margin-right: 0px;
+    height: 1.2rem;
+    margin-right: 5px;
   }
+  
 }
 .folio-button:active,.folio-button:focus {
   background-color: $folio-theme-color !important;

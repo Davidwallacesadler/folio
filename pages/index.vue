@@ -55,7 +55,7 @@
     
     <div class="d-flex flex-column align-items-center justify-content-center">
       <h3 class="folio-weight-thick pt-5">My Work</h3>
-      <p class="folio-weight-thin folio-font-small text-center">Below is a collection of my recent design and development work</p>
+      <p class="folio-detail-max-width folio-weight-thin folio-font-small text-center px-2">Below is a collection of my recent design and development work. If you're interested in working with I would love to hear from you.</p>
     </div>
     <b-button href="mailto:davidwallacesadler@gmail.com" pill class="folio-button">
       <img class="folio-button-icon" src="/contact.svg" alt="Icon of a person waving.">
