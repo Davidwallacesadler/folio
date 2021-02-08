@@ -15,7 +15,7 @@
       </h2>
     </div>
 
-    <img class="background-image mr-5 ml-5" src="/computer.svg" alt="Icon of a computer with cup and simple shapes">
+    <img class="background-image mr-5 ml-5" src="computer.svg" alt="Icon of a computer with cup and simple shapes">
 
     <div class="bio-container position-relative">
       <div class="bio-background position-absolute">
@@ -29,7 +29,7 @@
     <b-card-group class="card-group skills-group folio-content-max-width">
         <b-card class="folio-card">
           <div class="d-flex align-items-center justify-content-center flex-column">
-            <img class="folio-card-icon" src="/hand.svg" alt="Icon of a hand with brush, pencil, and ruler.">
+            <img class="folio-card-icon" src="hand.svg" alt="Icon of a hand with brush, pencil, and ruler.">
             <h3 class="folio-font-small folio-weight-thick pt-3 text-center">Design</h3>
             <p class="folio-weight-thin folio-font-small pt-3 text-center">I love to design simple, beautiful interfaces and iconography.</p> 
             <p class="folio-weight-medium folio-font-small pt-3 text-center text-theme">Design Tools:</p> 
@@ -40,7 +40,7 @@
         </b-card>
         <b-card class="folio-card">
           <div class="d-flex align-items-center justify-content-center flex-column">
-            <img class="folio-card-icon" src="/code.svg" alt="Icon denoting code">
+            <img class="folio-card-icon" src="code.svg" alt="Icon denoting code">
             <h3 class="folio-font-small folio-weight-thick pt-3 text-center">Development</h3>
             <p class="folio-weight-thin folio-font-small pt-3 text-center">I am passionate about taking app ideas from conception to completion.</p> 
             <p class="folio-weight-medium folio-font-small pt-3 text-center text-theme">Dev Tools:</p> 
@@ -58,7 +58,7 @@
       <p class="folio-detail-max-width folio-weight-thin folio-font-small text-center px-2">Below is a collection of my recent design and development work. If you're interested in working with I would love to hear from you.</p>
     </div>
     <b-button href="mailto:davidwallacesadler@gmail.com" pill class="folio-button">
-      <img class="folio-button-icon" src="/contact.svg" alt="Icon of a person waving.">
+      <img class="folio-button-icon" src="contact.svg" alt="Icon of a person waving.">
       Contact Me
       </b-button>
     <div class="py-5">
@@ -112,7 +112,7 @@ export default {
           alt: "Css 5 logo"
         },
         {
-          asset: "javaScript-logo.png",
+          asset: "java-script-logo.png",
           tip: "JavaScript",
           alt: "java script logo"
         },
@@ -135,49 +135,49 @@ export default {
       workProjects: 
       [
         {
-          src: "/leopold.svg",
+          src: "leopold.svg",
           link: [{ title: `View Site >`, href:"https://cnsrvit.usaconservation.org/" }],
           alt:"A canadian goose",
           title: "Project Leopold | Vue",
           subTitle: "Staffing application currently used by American Conservation Experience."
         },
         {
-          src: "/vue-photo-editor.svg",
+          src: "vue-photo-editor.svg",
           link: [{ title: `In Progress`, href:"" }],
           alt:"A simple camera.",
           title: "VUE Photo Editor | Vue",
           subTitle: "Photo editor made using vue and vueCropper."
         },
         {
-          src: "/blue-pail-logo.svg",
+          src: "blue-pail-logo.svg",
           link: [{ title: `View Code >`, href:"https://github.com/Davidwallacesadler/Blue-Pail" }],
           alt:"A blue watering pail with a yellow sun icon.",
           title: "Blue Pail | iOS, Android",
           subTitle: "Plant wantering reminder and tracking app."
         },
         {
-          src: "/dice-roll-logo.svg",
+          src: "dice-roll-logo.svg",
           link: [{ title: `View Code >`, href:"https://github.com/Davidwallacesadler/diceSim" }],
           alt:"A regular six-sided dice.",
           title: "Dice Roll | iOS",
           subTitle: "3D dice rolling simulator utilizing SceneKit."
         },
         {
-          src: "/good-game-logo.svg",
+          src: "good-game-logo.svg",
           link: [{ title: `View Code >`, href:"https://github.com/Davidwallacesadler/GG-GoodGame" }],
           alt:"A videogame controller",
           title: "Good Game | iOS",
           subTitle: "Videogame library manager and playthrough recording app."
         },
         {
-          src: "/text-to-clip-logo.svg",
+          src: "text-to-clip-logo.svg",
           link: [{ title: `View App >`, href:"https://apps.apple.com/us/app/texttoclip/id1525970670" }],
           alt:"A clipboard with a letter T in the middle.",
           title: "Text to Clip | iOS",
           subTitle: "Text scanning and digitizing app."
         },
         {
-          src: "/workout-log-logo.svg",
+          src: "workout-log-logo.svg",
           link: [{ title: `View App >`, href:"https://apps.apple.com/us/app/the-workout-log/id1254050586" }],
           alt:"A large bicep flexing.",
           title: "Workout Log | iOS",
@@ -187,11 +187,11 @@ export default {
     socials:
       [
         {
-          src: "/linkedin-logo.png",
+          src: "linkedin-logo.png",
           href: "https://www.linkedin.com/in/david-wallace-sadler/",
         },
         {
-          src: "/github-logo.svg",
+          src: "github-logo.svg",
           href: "https://github.com/Davidwallacesadler",
         },
       ]
