@@ -11,7 +11,6 @@
         <span class="text-theme folio-font-large folio-weight-thick">David!</span>
       </h1> 
       <h2 class="folio-font-medium folio-weight-thin text-center">I design and develop awesome software, and I love what I do
-        <span class="text-theme folio-font-large folio-weight-medium fading">|</span>
       </h2>
     </div>
 
@@ -21,7 +20,7 @@
       <div class="bio-background position-absolute">
         <div class="d-flex flex-column align-items-center p-5">
           <h3 class="folio-weight-thick text-white">A Little About Me</h3>
-          <p class="folio-weight-thin folio-font-small text-white folio-detail-max-width pt-3 text-center">I have been an artist all my life. I love to draw, think, and build and I love to build and design apps.</p>
+          <p class="folio-weight-thin folio-font-small text-white folio-detail-max-width pt-3 text-center">I have been an artist all my life. Above all else I love to draw, think, and build. I find myself bouncing back and forth between app deisgn and development and I love both processes.</p>
         </div>
       </div>
     </div>
@@ -55,7 +54,7 @@
     
     <div class="d-flex flex-column align-items-center justify-content-center">
       <h3 class="folio-weight-thick pt-5">My Work</h3>
-      <p class="folio-detail-max-width folio-weight-thin folio-font-small text-center px-2">Below is a collection of my recent design and development work. If you're interested in working with I would love to hear from you.</p>
+      <p class="folio-detail-max-width folio-weight-thin folio-font-small text-center px-2">Below is a collection of my recent design and development work. If you're interested in working me I would love to hear from you.</p>
     </div>
     <b-button href="mailto:davidwallacesadler@gmail.com" pill class="folio-button">
       <img class="folio-button-icon" src="contact.svg" alt="Icon of a person waving.">
@@ -81,7 +80,7 @@ export default {
         { 
           asset: "xd-logo.png",
           tip: "Adobe Xd",
-          alt: "Adobe x.d logo"
+          alt: "Adobe XD logo"
         },
         {
           asset: "ai-logo.png",
