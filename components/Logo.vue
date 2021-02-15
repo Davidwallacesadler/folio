@@ -40,6 +40,6 @@ name: `Logo`,
   margin: auto;
 }
 .theme-fill {
-fill: $folio-theme-color;
+fill: white;
 }
 </style>
