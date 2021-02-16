@@ -20,7 +20,7 @@
       <div class="bio-background position-absolute">
         <div class="d-flex flex-column align-items-center p-5">
           <h3 class="folio-weight-thick text-white">A Little About Me</h3>
-          <p class="folio-weight-thin folio-font-small text-white folio-detail-max-width pt-3 text-center">I have been an artist all my life. Above all else I love to draw, think, and build. I find myself bouncing back and forth between app deisgn and development and I love both processes.</p>
+          <p class="folio-weight-thin folio-font-small text-white folio-detail-max-width pt-3 text-center">I have been an artist all my life. Above all else I love to draw, think, and build. I find myself constantly bouncing from creative problems to analytical ones. This tendency has defined how I develop software.</p>
         </div>
       </div>
     </div>
@@ -78,7 +78,7 @@ export default {
       designToolLogos:
       [
         { 
-          asset: "xd-logo.png",
+          asset: "XD-logo.png",
           tip: "Adobe Xd",
           alt: "Adobe XD logo"
         },
