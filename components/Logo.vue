@@ -1,13 +1,13 @@
 <template>
-  <div class="logo">  
-    <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <div class="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
       <defs>
         <style scoped>
           .transparent {
-            fill: #ffffff00;
+          fill: #ffffff00;
           }
           .white {
-            fill: #fff;
+          fill: #fff;
           }
         </style>
       </defs>
@@ -30,7 +30,7 @@
 
 <script>
 export default {
-name: `Logo`,
+  name: 'Logo'
 }
 </script>
 

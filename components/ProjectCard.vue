@@ -1,34 +1,69 @@
 <template>
   <b-card class="project-card position-relative" :class="{dark: hasDarkContent}">
-      <!-- USE A B-card with text -->
-      <img :src="src" :alt="alt">
-      <div class="hover-contents">
-          <h5 class="text-white text-center">{{ title }}</h5>
-          <p class="text-white mb-2 text-center">{{ subTitle }}</p>
-          <b-button v-for="item in links" :key="item.title" :href="item.href" target="_blank" pill class="folio-button">
-              {{item.title}}
-          </b-button>
-      </div>
+    <!-- USE A B-card with text -->
+    <img :src="src" :alt="alt">
+    <div class="hover-contents">
+      <h5 class="text-white text-center">
+        {{ title }}
+      </h5>
+      <p class="text-white mb-2 text-center">
+        {{ subTitle }}
+      </p>
+      <b-button
+        v-for="item in links"
+        :key="item.title"
+        :href="item.href"
+        target="_blank"
+        pill
+        class="folio-button"
+      >
+        {{ item.title }}
+      </b-button>
+    </div>
   </b-card>
 </template>
 
 <script>
 export default {
-name: "ProjectCard",
-props: {
-    src: String,
-    alt: String,
-    to: String,
-    links: Array,
-    header: String,
-    subHeader: String,
-    title: String,
-    subTitle: String,
-    hasDarkContent: {
-        type: Boolean,
-        default: false,
+  name: 'ProjectCard',
+  props: {
+    src: {
+      type: String,
+      default: ''
     },
-},
+    alt: {
+      type: String,
+      default: ''
+    },
+    to: {
+      type: String,
+      default: ''
+    },
+    links: {
+      type: String,
+      default: ''
+    },
+    header: {
+      type: String,
+      default: ''
+    },
+    subHeader: {
+      type: String,
+      default: ''
+    },
+    title: {
+      type: String,
+      default: ''
+    },
+    subTitle: {
+      type: String,
+      default: ''
+    },
+    hasDarkContent: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
 

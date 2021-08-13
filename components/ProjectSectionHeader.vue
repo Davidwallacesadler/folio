@@ -1,17 +1,20 @@
 <template>
-<div class="d-flex justify-content-center m-2">
-  <div class="project-section-header folio-content-max-width">
-      <span class="section-header-text">{{text}}</span>
+  <div class="d-flex justify-content-center m-2">
+    <div class="project-section-header folio-content-max-width">
+      <span class="section-header-text">{{ text }}</span>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
 export default {
-name: `ProjectSectionHeader`,
-props: {
-    text: String,
-},
+  name: 'ProjectSectionHeader',
+  props: {
+    text: {
+      type: String,
+      default: ''
+    }
+  }
 }
 </script>
 

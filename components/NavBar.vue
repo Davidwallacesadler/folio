@@ -1,20 +1,23 @@
 <template>
-  <div 
-    class="navbar d-flex align-items-center justify-content-between p-4">
-    <div 
-      class="d-flex">
-      <Logo 
-        class="icon-lg" />
+  <div
+    class="navbar d-flex align-items-center justify-content-between p-4"
+  >
+    <div
+      class="d-flex"
+    >
+      <Logo
+        class="icon-lg"
+      />
     </div>
     <div>
       <slot />
     </div>
-    <!-- <b-nav 
-    v-if="isScreenLarge" 
+    <!-- <b-nav
+    v-if="isScreenLarge"
     card-header
-    class="justify-content-end">  
-      <b-nav-item 
-      class="regular-nav-item" 
+    class="justify-content-end">
+      <b-nav-item
+      class="regular-nav-item"
       v-for="(option,i) in options"
       :key="i"
       :to="option.to">
@@ -25,36 +28,36 @@
       :key="dropdown.option"
       :text="dropdown.option"
       :class="{ selected: selectedIndex === i }">
-          <b-dropdown-item 
+          <b-dropdown-item
           v-for="value in dropdown.values"
           :key="value">
           {{ value }}
           </b-dropdown-item>
       </b-nav-item-dropdown>
     </b-nav>
-    <b-button 
+    <b-button
     v-else
-    class="hamburger-button" 
+    class="hamburger-button"
     v-b-toggle.navigation-slideout>
-        <img 
+        <img
         src="/hamburger.svg"
         alt="">
     </b-button>
-    <b-sidebar 
-    id="navigation-slideout" 
+    <b-sidebar
+    id="navigation-slideout"
     backdrop
     right
     shadow
     no-header>
-        <div 
+        <div
         class="d-flex align-items-center justify-content-start nav-row"
         v-for="(option, i) in options"
         :key="option.label">
-          <img 
+          <img
           class="navigation-icon"
           :src="navigationIcons[i]"
           :alt="option.label">
-        <router-link 
+        <router-link
         class="slideout-nav-link"
         :to="option.to">
         {{option.label}}
@@ -65,29 +68,29 @@
 </template>
 
 <script>
-import NavHeader from "./NavHeader.vue";
+import NavHeader from './NavHeader.vue'
 export default {
-  name: "NavBar",
+  name: 'NavBar',
   components: {
-    NavHeader,
+    NavHeader
   },
   props: {
     title: {
-      type: String,
+      type: String
     },
     options: {
-      type: Array, //IE ["option", ...""]
+      type: Array // IE ["option", ...""]
     },
     dropdowns: {
-      type: Array, // IE [ {"option": "...", "values": ["DDoption, ...] }, ...{}]
-    },
+      type: Array // IE [ {"option": "...", "values": ["DDoption, ...] }, ...{}]
+    }
   },
-  data() {
+  data () {
     return {
       optionStates: Array,
-      windowWidth: 0,
-    };
-  },
+      windowWidth: 0
+    }
+  }
   // computed: {
   //   // isScreenLarge() {
   //   //    return this.windowWidth > 500
@@ -115,7 +118,7 @@ export default {
   // destroyed() {
   //     window.removeEventListener('resize', this.handleResize);
   // },
-};
+}
 </script>
 
 <style scoped lang="scss">

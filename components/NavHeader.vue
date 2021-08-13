@@ -4,11 +4,11 @@
 
 <script>
 export default {
-  name: "NavHeader",
+  name: 'NavHeader',
   props: {
-    text: String,
-  },
-};
+    text: String
+  }
+}
 </script>
 
 <style scoped>

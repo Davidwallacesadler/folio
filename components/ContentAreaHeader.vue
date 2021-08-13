@@ -1,14 +1,19 @@
 <template>
-<div>
-  <div class="header-text pl-4">{{text}}</div>
-</div>
+  <div>
+    <div class="header-text pl-4">
+      {{ text }}
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-name: `ContentAreaHeader`,
-props: {
-    text: String,
+  name: 'ContentAreaHeader',
+  props: {
+    text: {
+      type: String,
+      default: ''
+    }
   }
 }
 </script>

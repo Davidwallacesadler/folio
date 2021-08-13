@@ -1,23 +1,23 @@
 <template>
   <div class="gradient position-absolute pinned-bottom hidden">
-      <h3>{{header}}</h3>
-      <h5>{{subHeader}}</h5>
+    <h3>{{ header }}</h3>
+    <h5>{{ subHeader }}</h5>
   </div>
 </template>
 
 <script>
 export default {
-name: "CardDetailFade",
-props: {
+  name: 'CardDetailFade',
+  props: {
     header: {
-        type: String,
-        default: "Header"
+      type: String,
+      default: 'Header'
     },
     subHeader: {
-        type: String,
-        default: "Subheader"
-    },
-}
+      type: String,
+      default: 'Subheader'
+    }
+  }
 }
 </script>
 

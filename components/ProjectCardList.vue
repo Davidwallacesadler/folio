@@ -1,23 +1,30 @@
 <template>
-<b-card-group class="grid-2 p-5">
-    <ProjectCard v-for="(card, i) in cardData"
-    :key="i"
-    :to="card.to"
-    :src="card.src" 
-    :alt="card.alt" 
-    :links="card.link"
-    :title="card.title"
-    :sub-title="card.subTitle"
-    :has-dark-content="card.hasDarkContent" />
-</b-card-group>
+  <b-card-group class="grid-2 p-5">
+    <ProjectCard
+      v-for="(card, i) in cardData"
+      :key="i"
+      :to="card.to"
+      :src="card.src"
+      :alt="card.alt"
+      :links="card.link"
+      :title="card.title"
+      :sub-title="card.subTitle"
+      :has-dark-content="card.hasDarkContent"
+    />
+  </b-card-group>
 </template>
 
 <script>
 export default {
-name: "ProjectCardList",
-props: {
-    cardData: Array,
-},
+  name: 'ProjectCardList',
+  props: {
+    cardData: {
+      type: Array,
+      default () {
+        return []
+      }
+    }
+  }
 }
 </script>
 
@@ -30,7 +37,7 @@ props: {
 @media (min-width: 768px) {
   .card-list {
       width: 90vw;
-      
+
   }
 }
 @media (min-width: 1440px) {
