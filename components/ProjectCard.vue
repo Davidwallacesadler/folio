@@ -40,8 +40,8 @@ export default {
       default: ''
     },
     links: {
-      type: String,
-      default: ''
+      type: Array,
+      default: () => []
     },
     header: {
       type: String,

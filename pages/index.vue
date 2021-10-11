@@ -5,9 +5,9 @@
       <b-img class="profile-image" src="david-sadler.png" rounded="circle" v-bind="profileImgProps" />
     </div>
 
-    <div class="py-5 folio-content-max-width d-flex flex-column align-items-center">
+    <div class="pt-2 pb-5 folio-content-max-width d-flex flex-column align-items-center">
       <h1 class="folio-font-medium folio-weight-medium text-center">
-        Hi! My name is
+        Hi, my name is
         <span class="text-theme folio-font-large folio-weight-thick">David!</span>
       </h1>
       <h2 class="folio-font-medium folio-weight-thin text-center">
@@ -15,24 +15,23 @@
       </h2>
     </div>
 
-    <img class="background-image mr-5 ml-5" src="computer.svg" alt="Icon of a computer with cup and simple shapes">
+    <computer-svg />
+    <!-- <img class="background-image mr-5 ml-5 mb-2 testing" src="computer.svg" alt="Icon of a computer with cup and simple shapes"> -->
 
-    <div class="bio-container position-relative">
-      <div class="bio-background position-absolute">
-        <div class="d-flex flex-column align-items-center p-5">
-          <h3 class="folio-weight-thick text-white">
-            A Little About Me
-          </h3>
-          <p class="folio-weight-medium folio-font-small text-white folio-detail-max-width pt-3 text-center">
-            I have been an artist all my life. Above all else I love to draw, think, and build.
-            I find myself constantly bouncing from creative problems to analytical ones.
-            This tendency has defined how I develop software.
-          </p>
-        </div>
+    <div class="bio-container p-2 pb-5">
+      <div class="mt-3 text-center">
+        <h3 class="folio-weight-thick text-white">
+          A Little About Me
+        </h3>
+        <p class="folio-weight-thin folio-font-small text-white folio-detail-max-width mt-3 mx-auto">
+          I have been an artist all my life. Above all else I love to draw, think, and build.
+          I find myself constantly bouncing from creative problems to analytical ones and this
+          tendency has defined how I approach software development.
+        </p>
       </div>
     </div>
 
-    <b-card-group class="card-group skills-group folio-content-max-width">
+    <b-card-group class="card-group skills-group folio-content-max-width p-2">
       <b-card class="folio-card">
         <div class="d-flex align-items-center justify-content-center flex-column">
           <img class="folio-card-icon" src="hand.svg" alt="Icon of a hand with brush, pencil, and ruler.">
@@ -47,7 +46,7 @@
           </p>
           <div class="container pt-2 d-flex align-items-center justify-content-center">
             <b-img
-              v-for="(logo,i) in designToolLogos"
+              v-for="(logo,i) in designTools"
               :key="i"
               v-b-tooltip.hover
               class="tech-image m-1"
@@ -66,7 +65,7 @@
             Development
           </h3>
           <p class="folio-weight-thin folio-font-small pt-3 text-center">
-            I am passionate about taking app ideas from conception to completion.
+            I am passionate about taking app ideas from storyboard to release and beyod.
           </p>
           <p class="folio-weight-medium folio-font-small pt-3 text-center text-theme">
             Dev Tools:
@@ -74,7 +73,7 @@
           <div class="d-flex justify-content-center">
             <div class="container pt-2">
               <b-img
-                v-for="(logo,i) in devToolLogos"
+                v-for="(logo,i) in devTools"
                 :key="i"
                 v-b-tooltip.hover
                 class="tech-image m-1"
@@ -94,7 +93,7 @@
         My Work
       </h3>
       <p class="folio-detail-max-width folio-weight-thin folio-font-small text-center px-2">
-        Below is a collection of my recent design and development work. If you're interested in working me I would love to hear from you.
+        Below is a collection of my recent design and development work. If you're interested in working with me I would love to hear from you.
       </p>
     </div>
     <b-button href="mailto:davidwallacesadler@gmail.com" pill class="folio-button">
@@ -105,144 +104,36 @@
       <ProjectCardList :card-data="workProjects" />
     </div>
     <div class="folio-footer d-flex align-items-center justify-content-center text-center">
-      <p class="folio-font-small text-white">
-        Made with ♡ by Me 2021
+      <p class="folio-font-small folio-weight-thin text-white">
+        Made with ♡ by Me 2021 using Nuxt.js
       </p>
     </div>
   </div>
 </template>
 
 <script>
+import { workProjects } from '../mixins/workProjects'
+import { socials } from '../mixins/socials'
+import { designTools } from '../mixins/designTools'
+import { devTools } from '../mixins/devTools'
+import computerSvg from '../components/computerSvg.vue'
+
 export default {
+  components: { computerSvg },
   data () {
     return {
       profileImgProps: { width: 250, height: 250, fluid: true },
-      designToolLogos:
-      [
-        {
-          asset: 'XD-logo.png',
-          tip: 'Adobe Xd',
-          alt: 'Adobe XD logo'
-        },
-        {
-          asset: 'ai-logo.png',
-          tip: 'Adobe Illustrator',
-          alt: 'Adobe Illustrator logo'
-        },
-        {
-          asset: 'ps-logo.png',
-          tip: 'Adobe Photoshop',
-          alt: 'Adobe Photoshop logo'
-        },
-        {
-          asset: 'blender-logo.png',
-          tip: 'Blender',
-          alt: 'Blender logo'
-        }
-      ],
-      devToolLogos:
-      [
-        {
-          asset: 'html5-logo.png',
-          tip: 'HTML5',
-          alt: 'Html 5 logo'
-        },
-        {
-          asset: 'css3-logo.png',
-          tip: 'CSS3',
-          alt: 'Css 5 logo'
-        },
-        {
-          asset: 'java-script-logo.png',
-          tip: 'JavaScript',
-          alt: 'java script logo'
-        },
-        {
-          asset: 'vue-logo.png',
-          tip: 'Vue',
-          alt: 'Vue logo'
-        },
-        {
-          asset: 'swift-logo.png',
-          tip: 'Swift',
-          alt: 'Swift logo'
-        },
-        {
-          asset: 'kotlin-logo.png',
-          tip: 'Kotlin',
-          alt: 'Kotlin logo'
-        }
-      ],
-      workProjects:
-      [
-        {
-          src: 'leopold.svg',
-          link: [{ title: 'View Site >', href: 'https://cnsrvit.usaconservation.org/' }],
-          alt: 'A canadian goose',
-          title: 'Project Leopold | Vue',
-          subTitle: 'Staffing application currently used by American Conservation Experience.'
-        },
-        {
-          src: 'vue-photo-editor.svg',
-          link: [{ title: 'In Progress', href: '' }],
-          alt: 'A simple camera.',
-          title: 'VUE Photo Editor | Vue',
-          subTitle: 'Photo editor made using vue and vueCropper.'
-        },
-        {
-          src: 'blue-pail-logo.svg',
-          link: [{ title: 'View Code >', href: 'https://github.com/Davidwallacesadler/Blue-Pail' }],
-          alt: 'A blue watering pail with a yellow sun icon.',
-          title: 'Blue Pail | iOS, Android',
-          subTitle: 'Plant wantering reminder and tracking app.'
-        },
-        {
-          src: 'dice-roll-logo.svg',
-          link: [{ title: 'View Code >', href: 'https://github.com/Davidwallacesadler/diceSim' }],
-          alt: 'A regular six-sided dice.',
-          title: 'Dice Roll | iOS',
-          subTitle: '3D dice rolling simulator utilizing SceneKit.'
-        },
-        {
-          src: 'good-game-logo.svg',
-          link: [{ title: 'View Code >', href: 'https://github.com/Davidwallacesadler/GG-GoodGame' }],
-          alt: 'A videogame controller',
-          title: 'Good Game | iOS',
-          subTitle: 'Videogame library manager and playthrough recording app.'
-        },
-        {
-          src: 'text-to-clip-logo.svg',
-          link: [{ title: 'View App >', href: 'https://apps.apple.com/us/app/texttoclip/id1525970670' }],
-          alt: 'A clipboard with a letter T in the middle.',
-          title: 'Text to Clip | iOS',
-          subTitle: 'Text scanning and digitizing app.'
-        },
-        {
-          src: 'workout-log-logo.svg',
-          link: [{ title: 'View App >', href: 'https://apps.apple.com/us/app/the-workout-log/id1254050586' }],
-          alt: 'A large bicep flexing.',
-          title: 'Workout Log | iOS',
-          subTitle: 'Workout tracker and fitness app.'
-        }
-      ],
-      socials:
-      [
-        {
-          src: 'linkedin-logo.png',
-          href: 'https://www.linkedin.com/in/david-wallace-sadler/'
-        },
-        {
-          src: 'github-logo.svg',
-          href: 'https://github.com/Davidwallacesadler'
-        }
-      ]
+      designTools,
+      devTools,
+      workProjects,
+      socials
     }
   }
 }
 </script>
 
 <style lang="scss">
-@import '../assets/styles/main.scss';
+@import '@/assets/styles/main.scss';
 .overflow-hidden {
   overflow: hidden;
 }
@@ -276,15 +167,10 @@ export default {
   }
 }
 .bio-container {
-  width: 100vw;
-  height: 400px;
-}
-.bio-background {
   z-index: 1;
   top: 1rem;
   left: 0;
   width: 100vw;
-  height: 400px;
   background-color: $folio-theme-color;
   background-image: url('~@/static/sprinkles.svg');
 }
@@ -299,8 +185,7 @@ export default {
   height: 100px;
 }
 .card-group.skills-group {
-  margin-top: -5rem;
-  width: 90vw;
+  margin-top: -2.5rem;
 }
 .faux-text-box {
   border: 1px solid gray;
@@ -317,11 +202,6 @@ export default {
 @media (min-width: 1200px) {
   .background-image {
     width: 100vw;
-  }
-}
-@media (min-width: 600px) {
-  .card-group.skills-group {
-  margin-top: -8rem;
   }
 }
 .hover-card {

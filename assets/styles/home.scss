@@ -1,0 +1,127 @@
+@import './main.scss';
+
+.overflow-hidden {
+    overflow: hidden;
+  }
+  .profile-header {
+    width: 100vw;
+    height: 300px;
+  }
+  .profile-image {
+    z-index: 2;
+  }
+  .profile-background {
+    display: grid;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 230px;
+    background-color: $folio-theme-color;
+    background-image: url('~@/static/shapes.svg');
+    background-repeat: round;
+  }
+  .fading {
+    animation: fading 1s infinite;
+  }
+  @keyframes fading {
+    50% {
+      opacity: 0%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+  .bio-container {
+    z-index: 1;
+    top: 1rem;
+    left: 0;
+    width: 100vw;
+    background-color: $folio-theme-color;
+    background-image: url('~@/static/sprinkles.svg');
+  }
+  .folio-card {
+    z-index: 2;
+    border-radius: $folio-border-radius;
+    box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
+    border: none;
+  }
+  .folio-card-icon {
+    width: 100px;
+    height: 100px;
+  }
+  .card-group.skills-group {
+    margin-top: -2rem;
+  }
+  .faux-text-box {
+    border: 1px solid gray;
+    border-radius: 10px;
+  }
+  .background-image {
+    max-width: 750px;
+  }
+  .tech-image {
+    max-width: 50px;
+    max-height: 50px;
+    transition: all 0.25s;
+  }
+  @media (min-width: 1200px) {
+    .background-image {
+      width: 100vw;
+    }
+  }
+  .hover-card {
+    transition: box-shadow 1s;
+    border: 1px solid transparent;
+    padding: 0px;
+    width: 350px;
+    border-radius: 5px;
+  }
+  .clickable {
+    cursor: pointer;
+  }
+  
+  .hidden {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: url('~@/static/sprinkles.svg');
+    opacity: 0;
+    transition: opacity 1s;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+  }
+  
+  .hidden h5,
+  .hidden p {
+    color: white;
+  }
+  
+  .hover-card:hover {
+    /* animation: hover 1s infinite; */
+    animation-delay: 1.5s;
+    box-shadow: 20px 20px 20px rgb(143, 143, 143);
+  }
+  .hover-card:hover .hidden {
+    transition-delay: 0.5s;
+    opacity: 1;
+  }
+  
+  .title {
+    font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    display: block;
+    font-weight: 300;
+    font-size: 100px;
+    color: #35495e;
+    letter-spacing: 1px;
+  }
+  .folio-footer {
+    width: 100vw;
+    height: 100px;
+    background-color: $folio-theme-color;
+    background-image: url('~@/static/shapes.svg');
+    background-repeat: round;
+  }
