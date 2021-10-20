@@ -1,8 +1,8 @@
 <template>
-  <b-card class="project-card position-relative" :class="{dark: hasDarkContent}">
+  <b-card class="project-card position-relative" :class="{dark: hasDarkContent}" @click="emitClick()">
     <!-- USE A B-card with text -->
     <img :src="src" :alt="alt">
-    <div class="hover-contents">
+    <!-- <div class="hover-contents">
       <h5 class="text-white text-center">
         {{ title }}
       </h5>
@@ -12,14 +12,13 @@
       <b-button
         v-for="item in links"
         :key="item.title"
-        :href="item.href"
-        target="_blank"
         pill
         class="folio-button"
+        @click="emitClick()"
       >
-        {{ item.title }}
+        Check it out
       </b-button>
-    </div>
+    </div> -->
   </b-card>
 </template>
 
@@ -63,6 +62,11 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  methods: {
+    emitClick () {
+      this.$emit('click')
+    }
   }
 }
 </script>
@@ -70,7 +74,8 @@ export default {
 <style scoped lang="scss">
 @import '@/assets/styles/main.scss';
 .project-card {
-    overflow: hidden;
+  cursor: pointer;
+  overflow: hidden;
 }
 .hover-contents {
     position: absolute;
@@ -89,11 +94,16 @@ export default {
     opacity: 0;
     height: 100%;
 }
-.project-card:hover .hover-contents {
+.project-card:hover,
+.project-card:focus,
+.project-card:focus-within {
+  &.hover-contents {
     opacity: 1;
-}
-.project-card:hover img {
+  }
+  & img {
     transform: scale(1.2);
+  }
+
 }
 img {
     transition: all 0.5s;

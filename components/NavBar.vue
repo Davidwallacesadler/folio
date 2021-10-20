@@ -68,12 +68,8 @@
 </template>
 
 <script>
-import NavHeader from './NavHeader.vue'
 export default {
   name: 'NavBar',
-  components: {
-    NavHeader
-  },
   props: {
     title: {
       type: String

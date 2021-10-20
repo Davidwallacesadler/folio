@@ -429,39 +429,48 @@ svg {
   padding: 1rem;
   max-width: 750px;
 }
-#right-pent,
-#left-sq {
-    animation: bob 2s ease infinite alternate-reverse;
+#right-pent {
+  animation: bob 2.75s ease infinite alternate-reverse;
 
 }
-#right-star,
+#left-sq {
+  animation: bob 3s ease infinite alternate-reverse;
+
+}
+#right-star {
+  animation-delay: 0.1s;
+  animation: bob 2.25s ease-out infinite alternate-reverse;
+}
 #left-tri {
-    animation: bob 2.25s ease-out infinite alternate-reverse;
+  animation-delay: 0.5s;
+  animation: bob 2s ease infinite alternate-reverse;
 
 }
 
 #right-tri {
-    animation: bob 2.75s ease-in-out infinite alternate-reverse;
+  transform-origin: 80% 25%;
+  animation: rotate 2.75s ease-in-out infinite alternate-reverse;
 
 }
 #left-pent {
-    animation: bob 2.5s ease infinite alternate-reverse;
+  transform-origin: 25px 170px;
+  animation: rotate 2.5s ease-in-out infinite alternate-reverse;
 
 }
 @keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
 }
 @keyframes bob {
-    0% {
-        transform: translateY(0rem);
-    }
-    100% {
-        transform: translateY(-0.5rem);
-    }
+  0% {
+    transform: translateY(0rem);
+  }
+  100% {
+    transform: translateY(-0.5rem);
+  }
 }
 </style>
