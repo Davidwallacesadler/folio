@@ -5,9 +5,9 @@
     <div
       class="d-flex"
     >
-      <Logo
-        class="icon-lg"
-      />
+      <nuxt-link to="/">
+        <Logo />
+      </nuxt-link>
     </div>
     <div>
       <slot />

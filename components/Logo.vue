@@ -1,16 +1,6 @@
 <template>
   <div class="logo">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-      <defs>
-        <style scoped>
-          .transparent {
-          fill: #ffffff00;
-          }
-          .white {
-          fill: #fff;
-          }
-        </style>
-      </defs>
       <g id="personal-logo">
         <circle id="fill" class="theme-fill" cx="250" cy="250" r="238.5" />
         <path
@@ -38,6 +28,10 @@ export default {
 @import '@/assets/styles/main.scss';
 .logo {
   margin: auto;
+  width: 50px;
+  svg {
+    padding: 0px;
+  }
 }
 .theme-fill {
 fill: white;

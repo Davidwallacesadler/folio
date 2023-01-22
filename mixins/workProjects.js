@@ -1,6 +1,17 @@
 const workProjects =
 [
   {
+    src: 'plantastico-logo.png',
+    link: {
+      title: 'Check out the details!',
+      href: '/apps/plantastico'
+    },
+    alt: 'A barbel icon for sadie active.',
+    title: 'Plantastico',
+    subTitle: '',
+    media: []
+  },
+  {
     src: 'sadie-active-logo.png',
     link: {
       title: 'Check out the app on the App Store!',

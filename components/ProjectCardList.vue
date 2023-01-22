@@ -23,7 +23,14 @@
             {{ selectedData.subTitle }}
           </h6>
           <div class="mb-2">
-            <a :href="selectedData.link.href" target="_blank">{{ selectedData.link.title }}</a>
+            <div v-if="selectedData.title == 'Plantastico'">
+              <nuxt-link :to="selectedData.link.href">
+                {{ selectedData.link.title }}
+              </nuxt-link>
+            </div>
+            <div v-else>
+              <a :href="selectedData.link.href" target="_blank">{{ selectedData.link.title }}</a>
+            </div>
           </div>
           <div>
             <b-img v-for="src in selectedData.media" :key="src" :src="src" fluid style="max-height:500px" />
