@@ -65,7 +65,7 @@
             Development
           </h3>
           <p class="folio-weight-thin folio-font-small pt-3 text-center">
-            I am passionate about taking app ideas from storyboard to release and beyod.
+            I am passionate about taking app ideas from storyboard to release and beyond.
           </p>
           <p class="folio-weight-medium folio-font-small pt-3 text-center text-theme">
             Dev Tools:
@@ -105,7 +105,7 @@
     </div>
     <div class="folio-footer d-flex align-items-center justify-content-center text-center">
       <p class="folio-font-small folio-weight-thin text-white">
-        Made with ♡ by Me 2021 using Nuxt.js
+        Made with ♡ by Me 2024 using Nuxt.js
       </p>
     </div>
   </div>

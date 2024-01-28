@@ -449,28 +449,19 @@ svg {
 
 #right-tri {
   transform-origin: 80% 25%;
-  animation: rotate 2.75s ease-in-out infinite alternate-reverse;
 
 }
 #left-pent {
   transform-origin: 25px 170px;
-  animation: rotate 2.5s ease-in-out infinite alternate-reverse;
 
 }
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(45deg);
-  }
-}
+
 @keyframes bob {
   0% {
-    transform: translateY(0rem);
+    transform: translateY(0px);
   }
   100% {
-    transform: translateY(-0.5rem);
+    transform: translateY(-10px);
   }
 }
 </style>

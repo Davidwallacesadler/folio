@@ -3,13 +3,16 @@ const workProjects =
   {
     src: 'plantastico-logo.png',
     link: {
-      title: 'Check out the details!',
-      href: '/apps/plantastico'
+      title: 'Check out the app on the App Store!',
+      href: 'https://apps.apple.com/us/app/plantastico/id1661901952'
     },
     alt: 'A barbel icon for sadie active.',
     title: 'Plantastico',
-    subTitle: '',
-    media: []
+    subTitle: 'Transform your plant care routine with Plantastico, the ultimate companion for green thumbs! Say goodbye to the stress of remembering maintenance schedules and let this app handle it all for you.',
+    media: [
+      'plantastico-promo-1.png',
+      'plantastico-promo-2.png'
+    ]
   },
   {
     src: 'sadie-active-logo.png',
@@ -28,10 +31,7 @@ const workProjects =
   },
   {
     src: 'cnsrvit-text-icon-light.svg',
-    link: {
-      title: 'Check out the site!',
-      href: 'https://leopold.usaconservation.org/'
-    },
+    link: {},
     alt: 'A shovel and cloud logo for conserve it website',
     title: 'Cnsrvit | Vue Application',
     subTitle: 'Staffing and management application currently used by American Conservation Experience.',
@@ -56,10 +56,10 @@ const workProjects =
   },
   {
     src: 'dice-roll-logo.svg',
-    link: [{
+    link: {
       title: 'Check out the code!',
       href: 'https://github.com/Davidwallacesadler/diceSim'
-    }],
+    },
     alt: 'A regular six-sided dice.',
     title: 'Dice Roll | iOS',
     subTitle: '3D dice rolling simulator utilizing SceneKit.',
@@ -71,10 +71,10 @@ const workProjects =
   },
   {
     src: 'good-game-logo.svg',
-    link: [{
+    link: {
       title: 'Check out the code!',
       href: 'https://github.com/Davidwallacesadler/GG-GoodGame'
-    }],
+    },
     alt: 'A videogame controller',
     title: 'Good Game | iOS',
     subTitle: 'Videogame library manager and playthrough recording app.',
