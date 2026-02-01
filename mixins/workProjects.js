@@ -47,7 +47,7 @@ const workProjects =
     },
     alt: 'A blue watering pail with a yellow sun icon.',
     title: 'Blue Pail | iOS, Android',
-    subTitle: 'Plant wantering reminder and tracking app.',
+    subTitle: 'Plant watering reminder and tracking app.',
     media: [
       'bluepail-1.png',
       'bluepail-2.png',

@@ -75,7 +75,7 @@ export default {
       type: String
     },
     options: {
-      type: Array // IE ["option", ...""]
+      type: Array // e.g. [{ label: 'Work', to: '/work' }, ...]
     },
     dropdowns: {
       type: Array // IE [ {"option": "...", "values": ["DDoption, ...] }, ...{}]
