@@ -2,9 +2,8 @@
   <div class="d-flex flex-column align-items-center">
     <div class="profile-header position-relative d-flex align-items-center justify-content-center">
       <div class="profile-background position-absolute" />
-      <img class="profile-image img-fluid rounded-circle" src="/david-sadler.png" v-bind="profileImgProps" />
+      <img class="profile-image img-fluid rounded-circle" :src="'/folio/david-sadler.png'" v-bind="profileImgProps" />
     </div>
-
     <div class="pt-2 pb-5 folio-content-max-width d-flex flex-column align-items-center">
       <h1 class="folio-font-medium folio-weight-medium text-center">
         Hi, my name is
@@ -33,7 +32,7 @@
     <div class="card-group skills-group folio-content-max-width p-2">
       <div class="card folio-card">
         <div class="card-body d-flex align-items-center justify-content-center flex-column">
-          <img class="folio-card-icon" src="/hand.svg" alt="Icon of a hand with brush, pencil, and ruler.">
+          <img class="folio-card-icon" :src="'/folio/hand.svg'" alt="Icon of a hand with brush, pencil, and ruler.">
           <h3 class="folio-font-small folio-weight-thick pt-3 text-center">
             Design
           </h3>
@@ -48,7 +47,7 @@
               v-for="(logo,i) in designTools"
               :key="i"
               class="tech-image m-1 img-fluid"
-              :src="'/' + logo.asset"
+              :src="'/folio/' + logo.asset"
               :alt="logo.alt"
               :title="logo.tip"
             />
@@ -57,7 +56,7 @@
       </div>
       <div class="card folio-card">
         <div class="card-body d-flex align-items-center justify-content-center flex-column">
-          <img class="folio-card-icon" src="/code.svg" alt="Icon denoting code">
+          <img class="folio-card-icon" :src="'/folio/code.svg'" alt="Icon denoting code">
           <h3 class="folio-font-small folio-weight-thick pt-3 text-center">
             Development
           </h3>
@@ -73,7 +72,7 @@
                 v-for="(logo,i) in devTools"
                 :key="i"
                 class="tech-image m-1 img-fluid"
-                :src="'/' + logo.asset"
+                :src="'/folio/' + logo.asset"
                 :alt="logo.alt"
                 :title="logo.tip"
               />
@@ -92,7 +91,7 @@
       </p>
     </div>
     <a href="mailto:davidwallacesadler@gmail.com" class="btn btn-pill folio-button">
-      <img class="folio-button-icon" src="/contact.svg" alt="Icon of a person waving.">
+      <img class="folio-button-icon" :src="'/folio/contact.svg'" alt="Icon of a person waving.">
       Contact Me
     </a>
     <div class="py-5">
@@ -147,7 +146,7 @@ export default {
   width: 100vw;
   height: 230px;
   background-color: main.$folio-theme-color;
-  background-image: url('/shapes.svg');
+  background-image: url('/folio/shapes.svg');
   background-repeat: round;
 }
 .fading {
@@ -167,7 +166,7 @@ export default {
   left: 0;
   width: 100vw;
   background-color: main.$folio-theme-color;
-  background-image: url('/sprinkles.svg');
+  background-image: url('/folio/sprinkles.svg');
 }
 .folio-card {
   z-index: 2;
@@ -212,7 +211,7 @@ export default {
 
 .hidden {
   background-color: rgba(0, 0, 0, 0.25);
-  background-image: url('/sprinkles.svg');
+  background-image: url('/folio/sprinkles.svg');
   opacity: 0;
   transition: opacity 1s;
   position: absolute;
@@ -251,7 +250,7 @@ export default {
   width: 100vw;
   height: 100px;
   background-color: main.$folio-theme-color;
-  background-image: url('/shapes.svg');
+  background-image: url('/folio/shapes.svg');
   background-repeat: round;
 }
 </style>

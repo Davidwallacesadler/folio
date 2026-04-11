@@ -14,7 +14,7 @@
             <p class="project-subtitle">{{ card.subTitle }}</p>
           </div>
           <div class="project-carat">
-            <img :src="selectedIndex === i ? '/chevron.down.png' : '/chevron.left.png'" :alt="selectedIndex === i ? 'Collapse' : 'Expand'" class="chevron-icon" />
+            <img :src="selectedIndex === i ? '/folio/chevron.down.png' : '/folio/chevron.left.png'" :alt="selectedIndex === i ? 'Collapse' : 'Expand'" class="chevron-icon" />
           </div>
         </div>
         <div v-if="selectedIndex === i" class="project-details">

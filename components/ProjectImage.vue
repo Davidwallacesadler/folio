@@ -70,7 +70,7 @@ export default {
     justify-content: center;
     transition: opacity 0.6s;
     background-color: rgb(37, 25, 116);
-    background-image: url('/sprinkles.svg');
+    background-image: url('/folio/sprinkles.svg');
     padding: 5px;
     background-repeat: round;
     opacity: 0;

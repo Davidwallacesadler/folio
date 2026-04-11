@@ -2,7 +2,7 @@
   <div class="d-flex flex-column align-content-center">
     <div class=" pt-2 d-flex flex-column align-items-center justify-content-center">
       <h2>Presto Piano</h2>
-      <img src="/presto-logo.png" class="img-fluid" style="max-height:250px" />
+      <img :src="'/folio/presto-logo.png'" class="img-fluid" style="max-height:250px" />
       <p class="pt-2">
         Improve your piano skills and track your practice sessions with the Presto Piano iOS App.
       </p>
@@ -19,7 +19,7 @@
 
     <div class=" pt-2 d-flex align-items-center justify-content-center">
       <a href="mailto:dsdev994@gmail.com" class="btn btn-pill folio-button">
-        <img class="folio-button-icon" src="/contact.svg" alt="Icon of a person waving.">
+        <img class="folio-button-icon" :src="'/folio/contact.svg'" alt="Icon of a person waving.">
         Email Support
       </a>
     </div>
