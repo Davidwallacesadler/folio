@@ -5,9 +5,9 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
-  // router: {
-  //   base: '/folio/'
-  // },
+  router: {
+    base: '/folio/'
+  },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'David Sadler | Folio',
