@@ -19,10 +19,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/styles/main.scss';
+@use '@/assets/styles/main.scss' as main;
 .project-section-header {
     font-size: 1.3rem;
     font-weight: 300;
-    border-bottom: $folio-section-border;
+    border-bottom: main.$folio-section-border;
 }
 </style>

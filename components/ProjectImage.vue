@@ -1,25 +1,7 @@
 <template>
-  <b-card class="project-card position-relative" :class="{dark: hasDarkContent}" @click="emitClick()">
-    <!-- USE A B-card with text -->
+  <div class="card project-card position-relative" :class="{dark: hasDarkContent}" @click="emitClick()">
     <img :src="src" :alt="alt">
-    <!-- <div class="hover-contents">
-      <h5 class="text-white text-center">
-        {{ title }}
-      </h5>
-      <p class="text-white mb-2 text-center">
-        {{ subTitle }}
-      </p>
-      <b-button
-        v-for="item in links"
-        :key="item.title"
-        pill
-        class="folio-button"
-        @click="emitClick()"
-      >
-        Check it out
-      </b-button>
-    </div> -->
-  </b-card>
+  </div>
 </template>
 
 <script>
@@ -72,7 +54,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/styles/main.scss';
+@use '@/assets/styles/main.scss' as main;
 .project-card {
   cursor: pointer;
   overflow: hidden;
@@ -88,7 +70,7 @@ export default {
     justify-content: center;
     transition: opacity 0.6s;
     background-color: rgb(37, 25, 116);
-    background-image: url('~@/static/sprinkles.svg');
+    background-image: url('/sprinkles.svg');
     padding: 5px;
     background-repeat: round;
     opacity: 0;
@@ -111,7 +93,7 @@ img {
 }
 .card {
     border: transparent;
-    box-shadow: $folio-card-shadow;
+    box-shadow: main.$folio-card-shadow;
 }
 .card-title {
     border-top-left-radius: 10px;
@@ -128,7 +110,7 @@ img {
     padding: 0.25rem;
 }
 .card-body:hover {
-    box-shadow: $folio-card-hover-shadow;
+    box-shadow: main.$folio-card-hover-shadow;
 .card-subtitle,
 .card-title {
     color: black !important;

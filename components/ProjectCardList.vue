@@ -1,39 +1,37 @@
 <template>
   <div class="p-5">
-    <transition name="slide-fade" mode="out-in">
-      <b-card-group v-if="!selectedData" key="project-list" class="grid-2">
-        <ProjectCard
-          v-for="(card, i) in cardData"
-          :key="i"
-          :to="card.to"
-          :src="card.src"
-          :alt="card.alt"
-          :title="card.title"
-          :sub-title="card.subTitle"
-          :has-dark-content="card.hasDarkContent"
-          @click="selectedData = card"
-        />
-      </b-card-group>
-      <div v-else class="d-flex">
-        <div class="mx-auto d-flex flex-column align-items-center text-center" style="max-width: 800px">
-          <h4 class="folio-weight-thick">
-            {{ selectedData.title }}
-          </h4>
-          <h6 class="folio-weight-thin">
-            {{ selectedData.subTitle }}
-          </h6>
-          <div class="mb-2">
-            <a :href="selectedData.link.href" target="_blank">{{ selectedData.link.title }}</a>
+    <div class="project-list">
+      <div
+        v-for="(card, i) in cardData"
+        :key="i"
+        class="project-row"
+        @click="toggleExpanded(i)"
+      >
+        <div class="project-row-content">
+          <img :src="card.src" :alt="card.alt" class="project-image" />
+          <div class="project-info">
+            <h5 class="project-title">{{ card.title }}</h5>
+            <p class="project-subtitle">{{ card.subTitle }}</p>
           </div>
-          <div>
-            <b-img v-for="src in selectedData.media" :key="src" :src="src" fluid style="max-height:500px" />
+          <div class="project-carat">
+            <img :src="selectedIndex === i ? '/chevron.down.png' : '/chevron.left.png'" :alt="selectedIndex === i ? 'Collapse' : 'Expand'" class="chevron-icon" />
           </div>
-          <b-btn pill class="mt-2" @click="selectedData = null">
-            Back to the list
-          </b-btn>
+        </div>
+        <div v-if="selectedIndex === i" class="project-details">
+          <div v-if="card.description" class="project-description mb-4">
+            {{ card.description }}
+          </div>
+          <div class="project-links mb-3">
+            <a v-if="card.link && card.link.href" :href="card.link.href" target="_blank" class="btn btn-pill folio-button">
+              {{ card.link.title || 'View Project' }}
+            </a>
+          </div>
+          <div class="project-media">
+            <img v-for="src in card.media" :key="src" :src="src" class="img-fluid project-screenshot" />
+          </div>
         </div>
       </div>
-    </transition>
+    </div>
   </div>
 </template>
 
@@ -50,37 +48,135 @@ export default {
   },
   data () {
     return {
-      selectedData: null
+      selectedIndex: null
+    }
+  },
+  methods: {
+    toggleExpanded (index) {
+      this.selectedIndex = this.selectedIndex === index ? null : index
     }
   }
 }
 </script>
 
 <style scoped>
-.card-list {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    width: 300px;
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-@media (min-width: 768px) {
-  .card-list {
-    width: 90vw;
+
+.project-row {
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.project-row:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-row-content {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+}
+
+.project-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.project-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.project-subtitle {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.project-carat {
+  display: flex;
+  align-items: center;
+}
+
+.chevron-icon {
+  padding-left: 8px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.project-details {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.project-description {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.project-links {
+  text-align: center;
+}
+
+.project-media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.project-screenshot {
+  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .project-row-content {
+    padding: 0.75rem;
   }
-}
-@media (min-width: 1440px) {
-  .card-list {
-    width: 1200px;
+
+  .project-image {
+    width: 60px;
+    height: 60px;
   }
-}
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
+
+  .project-title {
+    font-size: 1rem;
+  }
+
+  .project-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .project-screenshot {
+    max-width: 100%;
+  }
 }
 </style>

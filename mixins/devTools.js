@@ -1,13 +1,18 @@
 const devTools = [
   {
-    asset: 'html5-logo.png',
-    tip: 'HTML5',
-    alt: 'Html 5 logo'
+    asset: 'swift-logo.png',
+    tip: 'Swift',
+    alt: 'Swift logo'
   },
   {
-    asset: 'css3-logo.png',
-    tip: 'CSS3',
-    alt: 'Css 5 logo'
+    asset: 'kotlin-logo.png',
+    tip: 'Kotlin',
+    alt: 'Kotlin logo'
+  },
+  {
+    asset: 'cpp-logo.png',
+    tip: 'C++',
+    alt: 'C++ logo'
   },
   {
     asset: 'java-script-logo.png',
@@ -19,15 +24,5 @@ const devTools = [
     tip: 'Vue',
     alt: 'Vue logo'
   },
-  {
-    asset: 'swift-logo.png',
-    tip: 'Swift',
-    alt: 'Swift logo'
-  },
-  {
-    asset: 'kotlin-logo.png',
-    tip: 'Kotlin',
-    alt: 'Kotlin logo'
-  }
 ]
 export { devTools }

@@ -2,7 +2,7 @@
   <div class="d-flex flex-column align-items-center">
     <div class="profile-header position-relative d-flex align-items-center justify-content-center">
       <div class="profile-background position-absolute" />
-      <b-img class="profile-image" src="david-sadler.png" rounded="circle" v-bind="profileImgProps" />
+      <img class="profile-image img-fluid rounded-circle" src="/david-sadler.png" v-bind="profileImgProps" />
     </div>
 
     <div class="pt-2 pb-5 folio-content-max-width d-flex flex-column align-items-center">
@@ -10,13 +10,12 @@
         Hi, my name is
         <span class="text-theme folio-font-large folio-weight-thick">David!</span>
       </h1>
-      <h2 class="folio-font-medium folio-weight-thin text-center">
-        I design and develop awesome software, and I love what I do
+      <h2 class="folio-font-medium folio-weight-thin text-center" style="padding-left: 1rem; padding-right: 1rem;">
+        I design and develop awesome software, and I love what I do.
       </h2>
     </div>
 
     <computer-svg />
-    <!-- <img class="background-image mr-5 ml-5 mb-2 testing" src="computer.svg" alt="Icon of a computer with cup and simple shapes"> -->
 
     <div class="bio-container p-2 pb-5">
       <div class="mt-3 text-center">
@@ -24,17 +23,17 @@
           A Little About Me
         </h3>
         <p class="folio-weight-thin folio-font-small text-white folio-detail-max-width mt-3 mx-auto">
-          I have been an artist all my life. Above all else I love to draw, think, and build.
-          I find myself constantly bouncing from creative problems to analytical ones and this
-          tendency has defined how I approach software development.
+          I've been an artist all my life. What I love most is drawing, thinking, and building.
+          I constantly bounce between creative challenges and analytical puzzles, and this
+          back-and-forth has shaped my approach to software development.
         </p>
       </div>
     </div>
 
-    <b-card-group class="card-group skills-group folio-content-max-width p-2">
-      <b-card class="folio-card">
-        <div class="d-flex align-items-center justify-content-center flex-column">
-          <img class="folio-card-icon" src="hand.svg" alt="Icon of a hand with brush, pencil, and ruler.">
+    <div class="card-group skills-group folio-content-max-width p-2">
+      <div class="card folio-card">
+        <div class="card-body d-flex align-items-center justify-content-center flex-column">
+          <img class="folio-card-icon" src="/hand.svg" alt="Icon of a hand with brush, pencil, and ruler.">
           <h3 class="folio-font-small folio-weight-thick pt-3 text-center">
             Design
           </h3>
@@ -42,25 +41,23 @@
             I love to design simple, beautiful interfaces and iconography.
           </p>
           <p class="folio-weight-medium folio-font-small pt-3 text-center text-theme">
-            Design Tools:
+            My Favorite Design Tools:
           </p>
           <div class="container pt-2 d-flex align-items-center justify-content-center">
-            <b-img
+            <img
               v-for="(logo,i) in designTools"
               :key="i"
-              v-b-tooltip.hover
-              class="tech-image m-1"
-              :src="logo.asset"
+              class="tech-image m-1 img-fluid"
+              :src="'/' + logo.asset"
               :alt="logo.alt"
               :title="logo.tip"
-              fluid
             />
           </div>
         </div>
-      </b-card>
-      <b-card class="folio-card">
-        <div class="d-flex align-items-center justify-content-center flex-column">
-          <img class="folio-card-icon" src="code.svg" alt="Icon denoting code">
+      </div>
+      <div class="card folio-card">
+        <div class="card-body d-flex align-items-center justify-content-center flex-column">
+          <img class="folio-card-icon" src="/code.svg" alt="Icon denoting code">
           <h3 class="folio-font-small folio-weight-thick pt-3 text-center">
             Development
           </h3>
@@ -68,44 +65,42 @@
             I am passionate about taking app ideas from storyboard to release and beyond.
           </p>
           <p class="folio-weight-medium folio-font-small pt-3 text-center text-theme">
-            Dev Tools:
+            My Favorite Languages and Frameworks:
           </p>
           <div class="d-flex justify-content-center">
             <div class="container pt-2">
-              <b-img
+              <img
                 v-for="(logo,i) in devTools"
                 :key="i"
-                v-b-tooltip.hover
-                class="tech-image m-1"
-                :src="logo.asset"
+                class="tech-image m-1 img-fluid"
+                :src="'/' + logo.asset"
                 :alt="logo.alt"
                 :title="logo.tip"
-                fluid
               />
             </div>
           </div>
         </div>
-      </b-card>
-    </b-card-group>
+      </div>
+    </div>
 
     <div class="d-flex flex-column align-items-center justify-content-center">
       <h3 class="folio-weight-thick pt-5">
         My Work
       </h3>
       <p class="folio-detail-max-width folio-weight-thin folio-font-small text-center px-2">
-        Below is a collection of my recent design and development work. If you're interested in working with me I would love to hear from you.
+        Below is a collection of my recent design and development work. If you're interested in working with me I would love to hear from you!
       </p>
     </div>
-    <b-button href="mailto:davidwallacesadler@gmail.com" pill class="folio-button">
-      <img class="folio-button-icon" src="contact.svg" alt="Icon of a person waving.">
+    <a href="mailto:davidwallacesadler@gmail.com" class="btn btn-pill folio-button">
+      <img class="folio-button-icon" src="/contact.svg" alt="Icon of a person waving.">
       Contact Me
-    </b-button>
+    </a>
     <div class="py-5">
       <ProjectCardList :card-data="workProjects" />
     </div>
     <div class="folio-footer d-flex align-items-center justify-content-center text-center">
       <p class="folio-font-small folio-weight-thin text-white">
-        Made with ♡ by Me 2024 using Nuxt.js
+        Made with ♡ | 2026
       </p>
     </div>
   </div>
@@ -133,7 +128,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/assets/styles/main.scss';
+@use '@/assets/styles/main.scss' as main;
 .overflow-hidden {
   overflow: hidden;
 }
@@ -151,8 +146,8 @@ export default {
   left: 0;
   width: 100vw;
   height: 230px;
-  background-color: $folio-theme-color;
-  background-image: url('~@/static/shapes.svg');
+  background-color: main.$folio-theme-color;
+  background-image: url('/shapes.svg');
   background-repeat: round;
 }
 .fading {
@@ -171,12 +166,12 @@ export default {
   top: 1rem;
   left: 0;
   width: 100vw;
-  background-color: $folio-theme-color;
-  background-image: url('~@/static/sprinkles.svg');
+  background-color: main.$folio-theme-color;
+  background-image: url('/sprinkles.svg');
 }
 .folio-card {
   z-index: 2;
-  border-radius: $folio-border-radius;
+  border-radius: main.$folio-border-radius;
   box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
   border: none;
 }
@@ -217,7 +212,7 @@ export default {
 
 .hidden {
   background-color: rgba(0, 0, 0, 0.25);
-  background-image: url('~@/static/sprinkles.svg');
+  background-image: url('/sprinkles.svg');
   opacity: 0;
   transition: opacity 1s;
   position: absolute;
@@ -255,8 +250,8 @@ export default {
 .folio-footer {
   width: 100vw;
   height: 100px;
-  background-color: $folio-theme-color;
-  background-image: url('~@/static/shapes.svg');
+  background-color: main.$folio-theme-color;
+  background-image: url('/shapes.svg');
   background-repeat: round;
 }
 </style>

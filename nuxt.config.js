@@ -5,9 +5,9 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
-  router: {
-    base: '/folio/'
-  },
+  // router: {
+  //   base: '/folio/'
+  // },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'David Sadler | Folio',
@@ -23,6 +23,7 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    'bootstrap/dist/css/bootstrap.min.css',
     '~/assets/styles/main.scss'
   ],
 
@@ -39,11 +40,11 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt'
   ],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-  }
+  },
+
+  compatibilityDate: '2026-04-10'
 }

@@ -1,4 +1,4 @@
-@import './main.scss';
+@use './main.scss' as main;
 
 .overflow-hidden {
     overflow: hidden;
@@ -17,8 +17,8 @@
     left: 0;
     width: 100vw;
     height: 230px;
-    background-color: $folio-theme-color;
-    background-image: url('~@/static/shapes.svg');
+    background-color: main.$folio-theme-color;
+    background-image: url('/shapes.svg');
     background-repeat: round;
   }
   .fading {
@@ -37,12 +37,12 @@
     top: 1rem;
     left: 0;
     width: 100vw;
-    background-color: $folio-theme-color;
-    background-image: url('~@/static/sprinkles.svg');
+    background-color: main.$folio-theme-color;
+    background-image: url('/sprinkles.svg');
   }
   .folio-card {
     z-index: 2;
-    border-radius: $folio-border-radius;
+    border-radius: main.$folio-border-radius;
     box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
     border: none;
   }
@@ -83,7 +83,7 @@
   
   .hidden {
     background-color: rgba(0, 0, 0, 0.25);
-    background-image: url('~@/static/sprinkles.svg');
+    background-image: url('/sprinkles.svg');
     opacity: 0;
     transition: opacity 1s;
     position: absolute;
@@ -121,7 +121,7 @@
   .folio-footer {
     width: 100vw;
     height: 100px;
-    background-color: $folio-theme-color;
-    background-image: url('~@/static/shapes.svg');
+    background-color: main.$folio-theme-color;
+    background-image: url('/shapes.svg');
     background-repeat: round;
   }

@@ -1,5 +1,10 @@
 const designTools = [
   {
+    asset: 'figma-logo.png',
+    tip: 'Figma',
+    alt: 'Figma logo'
+  },
+  {
     asset: 'XD-logo.png',
     tip: 'Adobe Xd',
     alt: 'Adobe XD logo'
