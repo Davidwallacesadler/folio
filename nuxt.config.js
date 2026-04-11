@@ -5,8 +5,8 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
-  router: {
-    base: '/folio/'
+  app: {
+    baseURL: '/folio/'
   },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
